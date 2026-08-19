@@ -18,7 +18,6 @@ export default function CtaSection({ onOpenTenantModal, onOpenDemoModal }) {
             {/* Left Content Area */}
             <div className="space-y-4 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/30 border border-blue-400/60 text-cyan-200 text-xs font-mono-tech font-extrabold shadow-sm tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse-live"></span>
                 <span>14-DAY RISK-FREE TRIAL · ZERO SETUP FEES</span>
               </div>
               
