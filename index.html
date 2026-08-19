@@ -12,26 +12,129 @@
     <meta name="author" content="Xorbyte Solution" />
     <meta name="robots" content="index, follow" />
 
+    <!-- Canonical & Alternate -->
+    <link rel="canonical" href="https://xorbyteerp.com/" />
+    
+    <!-- Robots & Crawlers -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Geo Meta Tags for Indian Retail & Global Enterprise -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.position" content="19.0760;72.8777" />
+    <meta name="ICBM" content="19.0760, 72.8777" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Xorbyte ERP" />
     <meta property="og:url" content="https://xorbyteerp.com/" />
-    <meta property="og:title" content="Xorbyte ERP — #1 AI-Powered Business ERP Software in India" />
-    <meta property="og:description" content="Ultra-fast POS billing, auto GST filing, offline billing mode, WhatsApp payment links, and AI bill scanning for retailers & distributors." />
+    <meta property="og:title" content="Xorbyte ERP — The Operating System for Modern Supermarkets & Retail Chains" />
+    <meta property="og:description" content="Ultra-fast sub-300ms POS billing, 100% offline active mode, multi-store stock sync, auto GSTR-1 JSON, and instant WhatsApp Udhaar CRM." />
     <meta property="og:image" content="https://xorbyteerp.com/og-image.webp" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Xorbyte ERP — AI-Powered Business ERP Software in India" />
-    <meta property="twitter:description" content="Ultra-fast POS billing, auto GST filing, offline billing mode, WhatsApp payment links, and AI bill scanning." />
+    <meta property="twitter:site" content="@xorbytesolution" />
+    <meta property="twitter:title" content="Xorbyte ERP — Built for Speed. Engineered for Scale." />
+    <meta property="twitter:description" content="Modern cloud ERP for supermarkets, FMCG wholesale, apparel, and retail chains. 100% offline resilient." />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Structured Data (JSON-LD) for Search Engines & AI Answer Engines (AEO / GEO / Google Search Console) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://xorbyteerp.com/#software",
+          "name": "Xorbyte ERP",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, Windows, Android, iOS, Cloud",
+          "description": "Next-generation cloud ERP and offline POS software for Indian supermarkets, grocery chains, wholesale FMCG distributors, apparel stores, and multi-branch retail outlets.",
+          "url": "https://xorbyteerp.com/",
+          "offers": {
+            "@type": "Offer",
+            "price": "999",
+            "priceCurrency": "INR",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "520",
+            "bestRating": "5"
+          },
+          "featureList": [
+            "Sub-300ms Barcode POS Billing",
+            "100% Offline-Active PWA Mode with IndexedDB",
+            "Dynamic UPI QR Code Generation on Counter Screen",
+            "Multi-Store & Depot Real-Time Stock Sync (SSE)",
+            "Automated GSTR-1 and GSTR-3B JSON Portal Exports",
+            "1-Click WhatsApp Udhaar Invoices with UPI Payment Links",
+            "Supplier Invoice OCR Auto-Scanner (PDF / Photos)",
+            "1-Click Tally, Vyapar and Busy Data Migration"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://xorbyteerp.com/#organization",
+          "name": "Xorbyte Solution",
+          "url": "https://xorbyteerp.com/",
+          "logo": "https://xorbyteerp.com/Favicon.svg",
+          "slogan": "The Operating System for Modern Retail Chains",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "availableLanguage": ["English", "Hindi"]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://xorbyteerp.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does Xorbyte ERP work 100% offline if store internet cuts out?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, 100%. With local IndexedDB caching, cashiers can continue barcode scanning, thermal receipt printing, and UPI cash billing without active internet. All sales auto-sync to the cloud once connectivity resumes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Xorbyte ERP compliant with Indian GST laws and apparel tax slabs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Xorbyte ERP automates dynamic apparel tax rules (5% below ₹1000, 12% above), automatic HSN validation, CGST/SGST/IGST splits, and 1-click audit-ready JSON exports for the GST Portal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I import customer, supplier and stock data from Tally, Vyapar or Busy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our built-in Data Import Wizard maps Excel and XML backups of your existing item catalog, customer ledgers, supplier balances, and opening stock in under 5 minutes with zero downtime."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Diverse & Cohesive Typography System -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/svg+xml" href="/Favicon.svg" />
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-sky-500 selection:text-white overflow-x-hidden">
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
