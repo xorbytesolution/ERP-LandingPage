@@ -6,7 +6,7 @@ import {
   Globe,
   Sparkles,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Highlighter } from "@/components/ui/highlighter";
 import { HeroTechBackground } from "@/components/ui/HeroTechBackground";
 
@@ -26,9 +26,11 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   React.useEffect(() => {
     const timer = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 4200);
+    }, 3800);
     return () => clearInterval(timer);
   }, [rotatingWords.length]);
+
+  const activeWord = rotatingWords[wordIndex] || rotatingWords[0];
 
   return (
     <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none">
@@ -51,18 +53,18 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
             <span className="relative inline-flex items-center justify-center max-w-full min-h-[58px] sm:min-h-[76px] md:min-h-[88px] overflow-hidden align-middle my-2 px-4 sm:px-8 py-1.5 sm:py-2.5 rounded-2xl sm:rounded-3xl bg-[#fcfaf6]/95 border border-[#ded7c7] shadow-[0_12px_35px_-8px_rgba(43,92,253,0.14),inset_0_1.5px_1px_rgba(255,255,255,0.95)] ring-1 ring-blue-50/50 transition-all duration-500">
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={rotatingWords[wordIndex].text}
-                  initial={{ y: 24, opacity: 0, filter: "blur(4px)" }}
-                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: -24, opacity: 0, filter: "blur(4px)" }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  key={activeWord.text}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                   className="inline-flex items-center gap-2 sm:gap-3.5 font-display font-black tracking-tight whitespace-nowrap select-none text-2xl sm:text-3xl md:text-5xl lg:text-6xl"
                 >
                   <span className="text-2xl sm:text-4xl md:text-5xl drop-shadow-xs shrink-0">
-                    {rotatingWords[wordIndex].icon}
+                    {activeWord.icon}
                   </span>
-                  <span className={`bg-gradient-to-r ${rotatingWords[wordIndex].gradient} bg-clip-text text-transparent`}>
-                    {rotatingWords[wordIndex].text}
+                  <span className={`bg-gradient-to-r ${activeWord.gradient} bg-clip-text text-transparent`}>
+                    {activeWord.text}
                   </span>
                 </motion.span>
               </AnimatePresence>

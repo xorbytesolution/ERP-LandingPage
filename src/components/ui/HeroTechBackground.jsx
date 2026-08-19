@@ -11,11 +11,11 @@ export function HeroTechBackground() {
     if (!ctx) return;
 
     let animationFrameId;
-    let width = (canvas.width = canvas.parentElement.clientWidth);
-    let height = (canvas.height = canvas.parentElement.clientHeight);
+    let width = (canvas.width = canvas.parentElement ? canvas.parentElement.clientWidth : window.innerWidth);
+    let height = (canvas.height = canvas.parentElement ? canvas.parentElement.clientHeight : window.innerHeight);
 
     // Particle nodes definition
-    const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
+    const particleCount = Math.min(Math.max(Math.floor((width * height) / 12000), 45), 90);
     const particles = [];
     const colors = ["#2563eb", "#06b6d4", "#6366f1", "#0284c7", "#3b82f6"];
 
@@ -23,18 +23,18 @@ export function HeroTechBackground() {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        radius: Math.random() * 2 + 1.2,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2.2 + 1.5,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.5 + 0.3,
+        alpha: Math.random() * 0.5 + 0.4,
         pulseSpeed: Math.random() * 0.02 + 0.01,
         pulseVal: Math.random() * Math.PI,
       });
     }
 
     // Mouse tracking
-    let mouse = { x: null, y: null, maxDist: 170 };
+    let mouse = { x: null, y: null, maxDist: 180 };
 
     const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
@@ -63,7 +63,7 @@ export function HeroTechBackground() {
       ctx.clearRect(0, 0, width, height);
 
       // Draw particle connections
-      const maxConnectDist = 130;
+      const maxConnectDist = 140;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -71,12 +71,12 @@ export function HeroTechBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxConnectDist) {
-            const alpha = (1 - dist / maxConnectDist) * 0.18;
+            const alpha = (1 - dist / maxConnectDist) * 0.35;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.lineWidth = 0.9;
             ctx.stroke();
           }
         }
@@ -85,7 +85,7 @@ export function HeroTechBackground() {
       // Draw mouse connections & update particles
       particles.forEach((p) => {
         p.pulseVal += p.pulseSpeed;
-        const currentAlpha = p.alpha + Math.sin(p.pulseVal) * 0.15;
+        const currentAlpha = p.alpha + Math.sin(p.pulseVal) * 0.2;
 
         // Mouse Proximity Link & Gentle Repulsion
         if (mouse.x !== null && mouse.y !== null) {
@@ -94,16 +94,16 @@ export function HeroTechBackground() {
           const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
 
           if (mDist < mouse.maxDist) {
-            const mAlpha = (1 - mDist / mouse.maxDist) * 0.45;
+            const mAlpha = (1 - mDist / mouse.maxDist) * 0.65;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.strokeStyle = `rgba(6, 182, 212, ${mAlpha})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 1.2;
             ctx.stroke();
 
             // Subtle push
-            const force = (1 - mDist / mouse.maxDist) * 0.3;
+            const force = (1 - mDist / mouse.maxDist) * 0.35;
             p.x -= (mdx / mDist) * force;
             p.y -= (mdy / mDist) * force;
           }
@@ -119,15 +119,15 @@ export function HeroTechBackground() {
 
         // Draw particle glow halo
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = p.color === "#06b6d4" ? "rgba(6, 182, 212, 0.12)" : "rgba(37, 99, 235, 0.12)";
+        ctx.arc(p.x, p.y, p.radius * 2.8, 0, Math.PI * 2);
+        ctx.fillStyle = p.color === "#06b6d4" ? "rgba(6, 182, 212, 0.25)" : "rgba(37, 99, 235, 0.22)";
         ctx.fill();
 
         // Draw particle dot core
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = Math.max(0.1, currentAlpha);
+        ctx.globalAlpha = Math.min(1, Math.max(0.2, currentAlpha));
         ctx.fill();
         ctx.globalAlpha = 1.0;
       });
@@ -146,53 +146,53 @@ export function HeroTechBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc]">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#f8fafc]">
       
-      {/* 1. Luminous Cyber Grid Pattern with Radial Vignette */}
+      {/* 1. Luminous Cyber Grid Pattern with Radial Spotlight */}
       <div
-        className="absolute inset-0 opacity-55 [mask-image:radial-gradient(ellipse_80%_65%_at_50%_35%,#000_30%,transparent_100%)]"
+        className="absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_85%_75%_at_50%_35%,#000_40%,transparent_100%)]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(37, 99, 235, 0.09) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(37, 99, 235, 0.09) 1px, transparent 1px)
+            linear-gradient(to right, rgba(37, 99, 235, 0.12) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(37, 99, 235, 0.12) 1px, transparent 1px)
           `,
-          backgroundSize: "40px 40px",
+          backgroundSize: "36px 36px",
         }}
       />
 
       {/* 2. Interactive Constellation Canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
+        className="absolute inset-0 w-full h-full pointer-events-none z-1"
       />
 
       {/* 3. Concentric Orbital Resonance Waves (Center Horizon) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-blue-500/15 animate-spin-slow [animation-duration:80s]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[780px] h-[780px] rounded-full border border-dashed border-indigo-400/20 animate-spin-slow [animation-duration:120s] [animation-direction:reverse]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] rounded-full border border-cyan-400/10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] rounded-full border border-blue-500/25 animate-spin-slow [animation-duration:80s]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] rounded-full border border-dashed border-indigo-400/30 animate-spin-slow [animation-duration:120s] [animation-direction:reverse]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1140px] h-[1140px] rounded-full border border-cyan-400/20" />
 
       {/* 4. Multi-Color Radiant Aurora Glowing Nebulas */}
       {/* Top Center Core Electric Blue & Cyan Super-Beam */}
-      <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[380px] bg-gradient-to-tr from-blue-600/20 via-cyan-400/25 to-indigo-500/20 rounded-full blur-[110px] animate-float-gentle" />
+      <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[800px] sm:w-[950px] h-[420px] bg-gradient-to-tr from-blue-600/30 via-cyan-400/35 to-indigo-600/30 rounded-full blur-[105px] animate-float-gentle" />
       
       {/* Left Wing Indigo-Cyan Glow */}
-      <div className="absolute top-1/4 -left-20 w-[500px] h-[350px] bg-gradient-to-r from-blue-500/18 via-cyan-400/15 to-transparent rounded-full blur-[100px] animate-float-subtle" />
+      <div className="absolute top-1/4 -left-10 w-[550px] h-[380px] bg-gradient-to-r from-blue-500/25 via-cyan-400/20 to-transparent rounded-full blur-[95px] animate-float-subtle" />
 
       {/* Right Wing Emerald-Purple Core Glow */}
-      <div className="absolute top-1/3 -right-20 w-[520px] h-[360px] bg-gradient-to-l from-indigo-500/15 via-emerald-400/12 to-blue-400/15 rounded-full blur-[100px] animate-float-gentle" />
+      <div className="absolute top-1/3 -right-10 w-[560px] h-[400px] bg-gradient-to-l from-indigo-500/22 via-emerald-400/18 to-blue-400/20 rounded-full blur-[95px] animate-float-gentle" />
 
       {/* 5. Sleek Telemetry Corner Crosshairs */}
-      <div className="hidden xl:flex absolute top-10 left-10 items-center gap-2 text-blue-600/60 font-mono-tech text-xs tracking-widest uppercase">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+      <div className="hidden xl:flex absolute top-10 left-10 items-center gap-2 text-blue-600/70 font-mono-tech text-xs tracking-widest uppercase">
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-live" />
         <span>+ 01.NODE // CLOUD_TERMINAL_ONLINE</span>
       </div>
-      <div className="hidden xl:block absolute top-10 right-10 text-blue-600/60 font-mono-tech text-xs tracking-widest uppercase">
+      <div className="hidden xl:block absolute top-10 right-10 text-blue-600/70 font-mono-tech text-xs tracking-widest uppercase">
         <span>LATENCY: &lt;38MS // MESH_ACTIVE +</span>
       </div>
-      <div className="hidden xl:block absolute bottom-8 left-10 text-slate-400/60 font-mono-tech text-xs tracking-widest uppercase">
+      <div className="hidden xl:block absolute bottom-8 left-10 text-slate-500/70 font-mono-tech text-xs tracking-widest uppercase">
         <span>[256_BIT_AES_ENCLAVE]</span>
       </div>
-      <div className="hidden xl:block absolute bottom-8 right-10 text-slate-400/60 font-mono-tech text-xs tracking-widest uppercase">
+      <div className="hidden xl:block absolute bottom-8 right-10 text-slate-500/70 font-mono-tech text-xs tracking-widest uppercase">
         <span>[AUTO_GSTR_1_AUDIT_READY]</span>
       </div>
 
