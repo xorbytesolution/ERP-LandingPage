@@ -209,23 +209,20 @@ export function LiquidMetalButton({
               />
             )}
             {viewMode === "text" && (
-              <div className="flex items-center gap-2">
-                <Sparkles size={16} className="text-amber-300 drop-shadow-[0px_2px_4px_rgba(0,0,0,0.9)] shrink-0" />
-                <span
-                  style={{
-                    fontSize: "14.5px",
-                    color: "#ffffff",
-                    fontWeight: 700,
-                    letterSpacing: "0.01em",
-                    textShadow: "0px 2px 4px rgba(0, 0, 0, 0.9), 0px 0px 8px rgba(59, 130, 246, 0.6)",
-                    transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                    transform: "scale(1)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {label}
-                </span>
-              </div>
+              <span
+                style={{
+                  fontSize: "14.5px",
+                  color: "#ffffff",
+                  fontWeight: 700,
+                  letterSpacing: "0.01em",
+                  textShadow: "0px 2px 4px rgba(0, 0, 0, 0.9), 0px 0px 8px rgba(59, 130, 246, 0.6)",
+                  transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                  transform: "scale(1)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {label}
+              </span>
             )}
           </div>
 
