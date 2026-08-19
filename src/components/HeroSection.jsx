@@ -154,8 +154,7 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
             </button>
 
             {/* Handwritten Sub-note under Button */}
-            <div className="font-handwriting text-xs sm:text-sm text-slate-500 font-bold flex items-center justify-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <div className="font-handwriting text-xs sm:text-sm text-slate-500 font-bold flex items-center justify-center">
               <span>14-Day Free Access · Zero Setup Fees</span>
             </div>
           </motion.div>
