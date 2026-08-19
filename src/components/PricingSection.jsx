@@ -76,17 +76,20 @@ export default function PricingSection({ onOpenDemoModal }) {
         
         {/* Section Header */}
         <div className="space-y-3 max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.2]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+            <span>Transparent Pricing</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.2]">
             Predictable Enterprise Plans <br className="hidden sm:inline" />
-            <span className="font-serif-accent text-blue-600 font-normal italic text-3xl sm:text-5xl md:text-6xl inline-block px-1">
+            <span className="text-blue-600">
               That Scale With Your Growth
             </span>
           </h2>
-          <p className="text-slate-600 font-sans text-xs sm:text-base leading-relaxed font-medium">
-            No hidden user fees. All plans include full access to POS Billing, Multi-Warehouse Stock, and Accounting.
+          <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed font-medium">
+            No hidden fees. Every plan includes full access to POS Billing, Multi-Warehouse Inventory, and Automated GST Accounting.
           </p>
 
-          {/* Billing Cycle Switcher with Handwritten Note */}
+          {/* Billing Cycle Switcher */}
           <div className="pt-4 flex flex-col items-center justify-center gap-2">
             <div className="bg-[#f4efe4] p-1.5 rounded-2xl border border-[#ded5c4] inline-flex items-center font-sans shadow-2xs">
               <button
@@ -108,13 +111,13 @@ export default function PricingSection({ onOpenDemoModal }) {
                 }`}
               >
                 <span>Annual Billing</span>
-                <span className="bg-emerald-400 text-slate-950 px-1.5 py-0.5 rounded text-[10px] font-mono-tech font-black">
+                <span className="bg-emerald-400 text-slate-950 px-1.5 py-0.5 rounded text-[10px] font-bold">
                   SAVE 20%
                 </span>
               </button>
             </div>
-            <div className="font-handwriting text-sm sm:text-base text-emerald-700 font-bold">
-              ✨ 2 Months Free + Free Tally Data Migration with Annual Plans!
+            <div className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+              Includes 2 Months Free &amp; Free Tally Data Migration with Annual Plans
             </div>
           </div>
         </div>
@@ -137,7 +140,7 @@ export default function PricingSection({ onOpenDemoModal }) {
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] font-mono-tech font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap tracking-wider flex items-center gap-1.5 z-20">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap tracking-wider flex items-center gap-1.5 z-20">
                     <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                     <span>{plan.badge}</span>
                   </div>
@@ -154,8 +157,8 @@ export default function PricingSection({ onOpenDemoModal }) {
                       </div>
                     </div>
                     {plan.highlight && (
-                      <div className="font-handwriting text-sm text-blue-700 font-bold -mt-1">
-                        👑 Chosen by 85%+ Indian retail chains
+                      <div className="text-xs font-semibold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-200 inline-block">
+                        Recommended for retail chains &amp; supermarkets
                       </div>
                     )}
                     <p className="text-xs text-slate-600 leading-relaxed font-sans font-medium">

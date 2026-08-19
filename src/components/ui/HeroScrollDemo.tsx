@@ -33,15 +33,18 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
       <ContainerScroll
         titleComponent={
           <div className="space-y-3">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-slate-900 leading-tight">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+              <span>Interactive Cockpit Preview</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-slate-900 leading-tight">
               Enterprise Store Intelligence <br className="hidden sm:inline" />
-              <span className="font-serif-accent italic text-blue-600 font-normal text-3xl sm:text-5xl md:text-6xl inline-block px-1">
-                On One Unified Glass Terminal
+              <span className="text-blue-600">
+                On One Unified Terminal
               </span>
             </h2>
 
-            <p className="text-slate-600 text-xs sm:text-sm font-sans max-w-xl mx-auto font-medium leading-relaxed">
-              Sub-300ms POS counter billing, multi-depot stock sync, and audit-grade GST ledger in one unified cockpit.
+            <p className="text-slate-600 text-sm sm:text-base font-sans max-w-xl mx-auto font-medium leading-relaxed">
+              Sub-300ms POS counter billing, multi-depot stock sync, and audit-grade GST ledger in one real-time cockpit.
             </p>
           </div>
         }
@@ -49,42 +52,26 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
         {/* Inside 3D Display Frame: Pure Luxury Light Glass Terminal */}
         <div className="w-full bg-[#fcfaf6]/95 text-slate-900 p-4 sm:p-7 flex flex-col justify-between overflow-hidden relative font-sans space-y-5 select-none">
           
-          {/* Top Enterprise Cockpit Header (No Generic macOS Dots) */}
+          {/* Top Enterprise Cockpit Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#ded5c4] pb-4 gap-3 bg-[#f5efe4]/85 -mx-4 -mt-4 sm:-mx-7 sm:-mt-7 px-4 sm:px-7 pt-4 sm:pt-5">
             {/* Store Terminal Identification */}
             <div className="flex items-center gap-2.5">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse-live shrink-0" />
               <div>
-                <div className="text-[10px] font-mono-tech font-bold text-slate-400 uppercase tracking-widest leading-none">
+                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider leading-none">
                   TERMINAL #01 · BANDRA SUPERMARKET
                 </div>
                 <div className="text-xs font-black text-slate-900 flex items-center gap-1.5 mt-0.5">
                   <span>XORBYTE CLOUD ERP</span>
-                  <span className="text-[9px] font-mono-tech text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-200">
-                    LIVE MESH 0ms
+                  <span className="text-[9px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-200">
+                    LIVE SYNC 0ms
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Middle Module Switcher Pills with Handwritten Callout */}
-            <div className="flex flex-col items-end gap-1">
-              <div className="hidden sm:flex items-center gap-1.5 font-handwriting text-xs sm:text-sm font-bold text-blue-600 pr-1">
-                <span>✨ Click these 3 live modules to test!</span>
-                <svg
-                  className="w-5 h-5 text-blue-500 shrink-0 transform -rotate-12 animate-pulse"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M10 6 C 24 10, 22 22, 22 32" />
-                  <path d="M14 26 C 18 30, 22 33, 24 33 C 25 28, 27 22, 28 17" />
-                </svg>
-              </div>
-              <div className="flex items-center gap-1 bg-[#ede6d8] p-1 rounded-xl border border-[#ded5c4]">
+            {/* Middle Module Switcher Pills */}
+            <div className="flex items-center gap-1 bg-[#ede6d8] p-1 rounded-xl border border-[#ded5c4]">
               {[
                 { id: "pos", label: "POS Billing", icon: ShoppingCart },
                 { id: "stock", label: "Stock Mesh", icon: Layers },
@@ -98,7 +85,7 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
                     onClick={() => setActiveTab(tab.id as any)}
                     className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
                       isSelected
-                        ? "bg-white text-blue-600 shadow-sm border border-[#ded5c4]"
+                        ? "bg-white text-slate-900 shadow-sm"
                         : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
@@ -107,11 +94,10 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
                   </button>
                 );
               })}
-              </div>
             </div>
 
             {/* Offline PWA Status Tag */}
-            <div className="hidden lg:flex items-center gap-2 font-mono-tech text-xs">
+            <div className="hidden lg:flex items-center gap-2 text-xs">
               <span className="text-[10px] font-bold text-slate-600 bg-white/90 px-2.5 py-1 rounded-full border border-[#ded5c4] shadow-2xs">
                 INDEXEDDB OFFLINE: READY
               </span>

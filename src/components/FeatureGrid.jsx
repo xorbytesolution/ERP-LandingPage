@@ -8,13 +8,10 @@ export default function FeatureGrid({ onOpenDemoModal }) {
   const gstRate = apparelPrice <= 1000 ? 5 : 12;
   const gstAmount = Math.round((apparelPrice * gstRate) / (100 + gstRate));
 
-  // Mini interactive state for OCR scan simulation
-  const [ocrScanned, setOcrScanned] = useState(true);
-
   return (
     <section
       id="features"
-      className="py-16 md:py-20 relative bg-transparent border-t border-[#e5ded0] overflow-hidden"
+      className="py-16 md:py-24 relative bg-transparent border-t border-[#e5ded0] overflow-hidden"
     >
       {/* Soft Ambient Radiance Orbs */}
       <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-blue-400/8 rounded-full blur-3xl pointer-events-none" />
@@ -24,23 +21,26 @@ export default function FeatureGrid({ onOpenDemoModal }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.2]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+            <span>Core ERP Architecture</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.2]">
             Built Specifically For Indian <br className="hidden sm:inline" />
-            <span className="font-serif-accent text-blue-600 font-normal italic text-3xl sm:text-5xl md:text-6xl inline-block px-1">
-              Supermarkets & Retail Chains
+            <span className="text-blue-600">
+              Supermarkets &amp; Retail Chains
             </span>
           </h2>
-          <p className="text-slate-600 font-sans text-xs sm:text-base leading-relaxed font-medium">
-            Everything your stores need to sell faster, eliminate stock mismatches, and automate tax compliance in one unified system.
+          <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed font-medium">
+            Everything your business needs to sell faster, eliminate stock loss, and automate tax compliance in one unified system.
           </p>
         </div>
 
         {/* ════════════════════════════════════════════════════════
-            ENTERPRISE BENTO PRODUCT SHOWCASE (AUTHENTIC ERP ENGINES)
+            ENTERPRISE BENTO PRODUCT SHOWCASE
         ════════════════════════════════════════════════════════ */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           
-          {/* ─── CARD 1: SUB-SECOND POS CHECKOUT (PosCheckoutView) ─── */}
+          {/* ─── CARD 1: SUB-SECOND POS CHECKOUT ─── */}
           <div className="lg:col-span-2 p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(37,99,235,0.12)] hover:border-blue-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -48,8 +48,8 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                   <Zap className="w-6 h-6" />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="badge-blue px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">POS ENGINE</span>
-                  <span className="text-[10px] font-mono-tech font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                  <span className="bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">POS ENGINE</span>
+                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                     100% Offline Active
                   </span>
                 </div>
@@ -57,29 +57,29 @@ export default function FeatureGrid({ onOpenDemoModal }) {
 
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-display font-extrabold text-slate-900 tracking-tight">
-                  Sub-Second Counter Billing & Dynamic UPI QR
+                  Sub-Second Counter Billing &amp; Dynamic UPI QR
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
-                  Handle massive supermarket queues effortlessly. Sub-300ms laser barcode lookups, counter screen UPI QR generation, multi-tender payments (Cash + UPI + Credit), and high-speed 80mm thermal receipt printing.
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
+                  Handle massive supermarket queues effortlessly with sub-300ms laser barcode scanning, pole-display dynamic UPI QR generation, multi-tender payments, and 80mm thermal receipt printing.
                 </p>
               </div>
 
               {/* Live Mini POS Widget Visual */}
               <div className="p-4 bg-[#f5efe4]/80 rounded-2xl border border-[#ded5c4] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                 <div className="p-3 bg-white/90 rounded-xl border border-[#ded5c4] space-y-1 shadow-2xs">
-                  <div className="text-slate-400 text-[10px] font-mono-tech">SCANNER SPEED</div>
-                  <div className="font-bold font-mono-tech text-emerald-600 text-sm">&lt; 300ms</div>
-                  <div className="text-[10px] text-slate-500 font-sans">USB & Bluetooth Laser</div>
+                  <div className="text-slate-400 text-[10px] uppercase font-bold">SCANNER SPEED</div>
+                  <div className="font-bold text-emerald-600 text-sm">&lt; 300ms</div>
+                  <div className="text-[11px] text-slate-500">USB &amp; Bluetooth Laser</div>
                 </div>
                 <div className="p-3 bg-white/90 rounded-xl border border-[#ded5c4] space-y-1 shadow-2xs">
-                  <div className="text-slate-400 text-[10px] font-mono-tech">PAYMENT TENDER</div>
-                  <div className="font-bold text-slate-900 text-sm font-sans">Dynamic UPI QR</div>
-                  <div className="text-[10px] text-slate-500 font-sans">Instant Soundbox Sync</div>
+                  <div className="text-slate-400 text-[10px] uppercase font-bold">PAYMENT TENDER</div>
+                  <div className="font-bold text-slate-900 text-sm">Dynamic UPI QR</div>
+                  <div className="text-[11px] text-slate-500">Instant Soundbox Sync</div>
                 </div>
                 <div className="p-3 bg-white/90 rounded-xl border border-[#ded5c4] space-y-1 shadow-2xs">
-                  <div className="text-slate-400 text-[10px] font-mono-tech">THERMAL RECEIPT</div>
-                  <div className="font-bold text-slate-900 text-sm font-sans">80mm ESC/POS</div>
-                  <div className="text-[10px] text-slate-500 font-mono-tech">GSTIN & HSN Validated</div>
+                  <div className="text-slate-400 text-[10px] uppercase font-bold">THERMAL RECEIPT</div>
+                  <div className="font-bold text-slate-900 text-sm">80mm ESC/POS</div>
+                  <div className="text-[11px] text-slate-500">GSTIN &amp; HSN Validated</div>
                 </div>
               </div>
             </div>
@@ -93,33 +93,32 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-blue-600 font-bold text-sm">⚡ 15x faster checkout</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· Zero Billing Lag</span>
+                <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">Zero Billing Lag</span>
               </div>
             </div>
           </div>
 
-          {/* ─── CARD 2: REAL-TIME STOCK SYNC (InventoryView) ─── */}
+          {/* ─── CARD 2: REAL-TIME STOCK SYNC ─── */}
           <div className="p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(16,185,129,0.12)] hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm group-hover:scale-105 transition-transform">
                   <Package className="w-6 h-6" />
                 </div>
-                <span className="badge-emerald px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">SSE STOCK SYNC</span>
+                <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">STOCK SYNC</span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-slate-900 tracking-tight">
-                  Multi-Store & Depot Stock Sync
+                  Multi-Store &amp; Depot Stock Sync
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium">
                   Centralized inventory control across all branch outlets and central depots. Stock auto-deducts in real time with batch expiry tracking.
                 </p>
               </div>
 
               {/* Visual Branch List */}
-              <div className="space-y-2 font-mono-tech text-xs">
+              <div className="space-y-2 text-xs">
                 <div className="p-2.5 bg-[#f5efe4]/80 rounded-xl border border-[#ded5c4] flex justify-between items-center">
                   <span className="font-bold text-slate-800">Bandra Store #01</span>
                   <span className="text-emerald-600 font-bold">142 Units (Live)</span>
@@ -140,27 +139,26 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-emerald-700 font-bold text-sm">📦 Live Cloud Sync</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· 0ms Latency</span>
+                <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">Real-Time Cloud Sync</span>
               </div>
             </div>
           </div>
 
-          {/* ─── CARD 3: WHATSAPP UDHAAR CRM (CustomersView) ─── */}
+          {/* ─── CARD 3: WHATSAPP UDHAAR CRM ─── */}
           <div className="p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(245,158,11,0.12)] hover:border-amber-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 shadow-sm group-hover:scale-105 transition-transform">
                   <MessageSquare className="w-6 h-6" />
                 </div>
-                <span className="badge-emerald px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">5X CASH RECOVERY</span>
+                <span className="bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">CASH RECOVERY</span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-slate-900 tracking-tight">
-                  WhatsApp Udhaar & UPI Links
+                  WhatsApp Udhaar &amp; UPI Links
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium">
                   Turn credit into instant cash. Send automated WhatsApp bills with detailed PDF invoices and direct UPI scan-to-pay QR links.
                 </p>
               </div>
@@ -184,27 +182,26 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-amber-700 font-bold text-sm">💬 1-Click QR Link</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· Instant Sync</span>
+                <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">1-Click QR Link</span>
               </div>
             </div>
           </div>
 
-          {/* ─── CARD 4: AUTOMATED GSTR-1 TAX ENGINE (TaxReportView) ─── */}
+          {/* ─── CARD 4: AUTOMATED GSTR-1 TAX ENGINE ─── */}
           <div className="lg:col-span-2 p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(168,85,247,0.12)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 shadow-sm group-hover:scale-105 transition-transform">
                   <FileCheck className="w-6 h-6" />
                 </div>
-                <span className="badge-purple px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">100% GST COMPLIANT</span>
+                <span className="bg-purple-50 text-purple-700 border border-purple-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">100% GST COMPLIANT</span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-display font-extrabold text-slate-900 tracking-tight">
-                  Automated GSTR-1 JSON & Dynamic Apparel Slabs
+                  Automated GSTR-1 JSON &amp; Dynamic Apparel Slabs
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
                   Automates dynamic apparel tax rules (5% below ₹1000, 12% above), automatic HSN validation, CGST/SGST/IGST splits, and 1-click audit-ready JSON upload for the GST Portal.
                 </p>
               </div>
@@ -213,7 +210,7 @@ export default function FeatureGrid({ onOpenDemoModal }) {
               <div className="p-4 bg-[#f5efe4]/80 rounded-2xl border border-[#ded5c4] space-y-2.5 shadow-2xs">
                 <div className="flex justify-between items-center text-xs font-bold text-slate-900 font-sans">
                   <span>Apparel Sale Item: ₹{apparelPrice}</span>
-                  <span className={`px-2.5 py-0.5 rounded font-mono-tech text-[11px] font-bold ${gstRate === 5 ? "bg-emerald-100 text-emerald-800" : "bg-purple-100 text-purple-800"}`}>
+                  <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold ${gstRate === 5 ? "bg-emerald-100 text-emerald-800" : "bg-purple-100 text-purple-800"}`}>
                     Auto Tax Slab: {gstRate}% GST Applied (Tax: ₹{gstAmount})
                   </span>
                 </div>
@@ -226,10 +223,10 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                   onChange={(e) => setApparelPrice(Number(e.target.value))}
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono-tech">
-                  <span>₹500 (5% GST Threshold)</span>
+                <div className="flex justify-between text-[10px] text-slate-500 font-medium">
+                  <span>₹500 (5% GST)</span>
                   <span>₹1,000 Cutoff</span>
-                  <span>₹2,500 (12% GST Threshold)</span>
+                  <span>₹2,500 (12% GST)</span>
                 </div>
               </div>
             </div>
@@ -243,34 +240,33 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-purple-700 font-bold text-sm">📑 CA Audit Ready</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· Govt Portal Ready</span>
+                <span className="text-xs font-semibold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">CA Audit Ready</span>
               </div>
             </div>
           </div>
 
-          {/* ─── CARD 5: AI INVOICE OCR SCANNER (AiBillScannerModal) ─── */}
+          {/* ─── CARD 5: AI INVOICE OCR SCANNER ─── */}
           <div className="p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(56,189,248,0.12)] hover:border-sky-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shadow-sm group-hover:scale-105 transition-transform">
                   <ScanLine className="w-6 h-6" />
                 </div>
-                <span className="badge-blue px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">PURCHASE OCR</span>
+                <span className="bg-sky-50 text-sky-700 border border-sky-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">PURCHASE OCR</span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-lg sm:text-xl font-display font-extrabold text-slate-900 tracking-tight">
                   Supplier Invoice OCR Scanner
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium">
                   Snap vendor purchase bills or upload distributor PDFs. AI automatically extracts vendor GSTIN, items, and tax rates into your purchase register in 1.2s.
                 </p>
               </div>
 
-              <div className="p-3 bg-[#f5efe4]/80 rounded-xl border border-[#ded5c4] text-xs font-mono-tech text-slate-700 space-y-1 shadow-2xs">
+              <div className="p-3 bg-[#f5efe4]/80 rounded-xl border border-[#ded5c4] text-xs text-slate-700 space-y-1 shadow-2xs">
                 <div className="text-[10px] text-emerald-600 font-bold">✓ AUTO-PARSED SUPPLIER BILL</div>
-                <div className="truncate">Nestle India · 4 Line Items</div>
+                <div className="truncate font-medium">Nestle India · 4 Line Items</div>
                 <div className="font-bold">Total: ₹18,650.00</div>
               </div>
             </div>
@@ -284,27 +280,26 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-sky-700 font-bold text-sm">🤖 1.2s instant extraction</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· Zero Manual Entry</span>
+                <span className="text-xs font-semibold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">Zero Manual Entry</span>
               </div>
             </div>
           </div>
 
-          {/* ─── CARD 6: 1-CLICK TALLY / VYAPAR MIGRATION (TallyImportModal) ─── */}
+          {/* ─── CARD 6: 1-CLICK TALLY / VYAPAR MIGRATION ─── */}
           <div className="lg:col-span-2 p-6 sm:p-8 rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_16px_40px_rgba(99,102,241,0.12)] hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm group-hover:scale-105 transition-transform">
                   <FileSpreadsheet className="w-6 h-6" />
                 </div>
-                <span className="badge-purple px-3 py-1 text-[10px] font-mono-tech font-bold uppercase">ZERO DOWNTIME</span>
+                <span className="bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 text-[11px] font-semibold rounded-full uppercase">ZERO DOWNTIME</span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-display font-extrabold text-slate-900 tracking-tight">
-                  1-Click Tally, Vyapar & Busy Data Migration
+                  1-Click Tally, Vyapar &amp; Busy Data Migration
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium max-w-xl">
                   Switching is effortless. Upload your existing customer ledgers, supplier balances, and inventory spreadsheets. Our import wizard maps barcodes and opening stocks in under 5 minutes.
                 </p>
               </div>
@@ -312,11 +307,11 @@ export default function FeatureGrid({ onOpenDemoModal }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                 <div className="p-3 bg-[#f5efe4]/80 rounded-xl border border-[#ded5c4] flex items-center gap-2 shadow-2xs">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span className="font-semibold font-sans text-slate-800">Direct Tally XML & Excel spreadsheet parser</span>
+                  <span className="font-semibold text-slate-800">Direct Tally XML &amp; Excel spreadsheet parser</span>
                 </div>
                 <div className="p-3 bg-[#f5efe4]/80 rounded-xl border border-[#ded5c4] flex items-center gap-2 shadow-2xs">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span className="font-semibold font-sans text-slate-800">Free 1-on-1 migration assistance from our team</span>
+                  <span className="font-semibold text-slate-800">Free 1-on-1 migration assistance from our team</span>
                 </div>
               </div>
             </div>
@@ -330,8 +325,7 @@ export default function FeatureGrid({ onOpenDemoModal }) {
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="flex items-center gap-2">
-                <span className="font-handwriting text-indigo-700 font-bold text-sm">✨ 100% Free Assisted Setup</span>
-                <span className="text-[10px] font-mono-tech text-slate-400">· Zero Downtime</span>
+                <span className="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">100% Free Assisted Setup</span>
               </div>
             </div>
           </div>

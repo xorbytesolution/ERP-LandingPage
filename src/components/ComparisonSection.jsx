@@ -78,22 +78,25 @@ export default function ComparisonSection({ onOpenDemoModal }) {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10 text-center">
         
-        {/* Section Header (Clean & Punchy) */}
+        {/* Section Header */}
         <div className="space-y-3 max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.15]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+            <span>Competitive Matrix</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.15]">
             Why Modern Retailers <br className="hidden sm:inline" />
-            <span className="font-serif-accent text-blue-600 font-normal italic text-3xl sm:text-5xl md:text-6xl inline-block px-1">
-              Switch to Xorbyte Cloud.
+            <span className="text-blue-600">
+              Switch to Xorbyte Cloud
             </span>
           </h2>
 
-          <p className="text-slate-600 font-sans text-xs sm:text-sm font-medium">
-            Next-gen cloud architecture compared directly against legacy desktop tools (Tally, Vyapar, Busy).
+          <p className="text-slate-600 font-sans text-sm sm:text-base font-medium">
+            Next-gen cloud architecture compared directly against legacy desktop tools like Tally, Vyapar, and Busy.
           </p>
         </div>
 
         {/* ════════════════════════════════════════════════════════
-            RICH ANIMATED COMPARISON MATRIX (CLEAN, PUNCHY, HIGH-TECH)
+            RICH ANIMATED COMPARISON MATRIX (CLEAN & DIRECT)
         ════════════════════════════════════════════════════════ */}
         <ScrollPerspectiveCard initialRotateX={10} initialScale={0.97}>
           <div className="relative w-full rounded-3xl bg-[#fcfaf6]/95 backdrop-blur-xl border border-[#ded7c7] shadow-[0_20px_50px_-15px_rgba(44,39,32,0.12),inset_0_1.5px_1px_rgba(255,255,255,0.95)] overflow-hidden text-left">

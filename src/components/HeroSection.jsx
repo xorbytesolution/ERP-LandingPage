@@ -4,21 +4,23 @@ import {
   CheckCircle2,
   Zap,
   Globe,
-  Sparkles,
+  ShieldCheck,
+  Smartphone,
+  Store,
+  Layers,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Highlighter } from "@/components/ui/highlighter";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpenSimulator }) {
-  // Rotating Headline Scrambler Words with Icons
+  // Rotating Business Segment Scrambler
   const rotatingWords = [
-    { text: "Enterprise POS Counters", icon: "⚡", gradient: "from-blue-600 to-indigo-600" },
     { text: "Supermarket Chains", icon: "🛒", gradient: "from-blue-600 to-cyan-600" },
-    { text: "Apparel & Garment Hubs", icon: "👔", gradient: "from-indigo-600 to-purple-600" },
-    { text: "Wholesale & FMCG Depots", icon: "📦", gradient: "from-blue-600 to-indigo-600" },
-    { text: "Pharmacy & Retail Chains", icon: "💊", gradient: "from-cyan-600 to-blue-600" },
-    { text: "Multi-Store Retailers", icon: "🏬", gradient: "from-emerald-600 to-teal-600" },
+    { text: "Apparel & Garment Stores", icon: "👕", gradient: "from-indigo-600 to-purple-600" },
+    { text: "Wholesale & FMCG Hubs", icon: "📦", gradient: "from-blue-600 to-indigo-600" },
+    { text: "Pharmacy & Medical Retail", icon: "💊", gradient: "from-cyan-600 to-blue-600" },
+    { text: "Multi-Store Retail Brands", icon: "🏬", gradient: "from-emerald-600 to-teal-600" },
   ];
 
   const [wordIndex, setWordIndex] = useState(0);
@@ -26,7 +28,7 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   React.useEffect(() => {
     const timer = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 4200);
+    }, 4000);
     return () => clearInterval(timer);
   }, [rotatingWords.length]);
 
@@ -34,48 +36,32 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
     <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden text-center select-none">
       
       {/* ═══════════════════════════════════════════════════
-          RICH DYNAMIC HERO BACKGROUND ENGINE
+          DYNAMIC ARCHITECTURAL BACKGROUND
           ═══════════════════════════════════════════════════ */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* 1. Interactive Dynamic Flickering Grid with Radial Feather Mask */}
-        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_35%,transparent_100%)] opacity-70">
+        {/* Interactive Subtle Micro-Grid */}
+        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_35%,transparent_100%)] opacity-60">
           <FlickeringGrid
             squareSize={3}
-            gridGap={9}
+            gridGap={10}
             color="rgb(37, 99, 235)"
-            maxOpacity={0.25}
-            flickerChance={0.2}
+            maxOpacity={0.2}
+            flickerChance={0.15}
             className="w-full h-full"
           />
         </div>
 
-        {/* 2. Concentric Orbit Tech Rings */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-blue-400/15 animate-spin-slow [animation-duration:90s]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-dashed border-indigo-400/15 animate-spin-slow [animation-duration:140s] [animation-direction:reverse]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1020px] h-[1020px] rounded-full border border-blue-500/10" />
+        {/* Dynamic Concentric Orbit Rings */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] rounded-full border border-blue-400/10 animate-spin-slow [animation-duration:100s]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-dashed border-indigo-400/10 animate-spin-slow [animation-duration:160s] [animation-direction:reverse]" />
 
-        {/* 3. Floating Aurora Ambient Glow Orbs */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[340px] bg-gradient-to-tr from-blue-600/18 via-indigo-500/12 to-cyan-400/15 rounded-full blur-[110px] animate-float-gentle" />
-        <div className="absolute top-1/3 left-1/4 w-[480px] h-[260px] bg-gradient-to-br from-cyan-400/12 via-emerald-400/10 to-blue-500/12 rounded-full blur-[95px] animate-float-subtle" />
-        <div className="absolute top-1/2 right-1/4 w-[420px] h-[240px] bg-gradient-to-tl from-purple-500/10 via-blue-500/10 to-amber-400/8 rounded-full blur-[90px] animate-float-gentle" />
+        {/* Ambient Floating Aurora Mesh */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[320px] bg-gradient-to-tr from-blue-600/15 via-indigo-500/10 to-cyan-400/12 rounded-full blur-[100px] animate-float-gentle" />
+        <div className="absolute top-1/3 left-1/4 w-[450px] h-[240px] bg-gradient-to-br from-cyan-400/10 via-emerald-400/8 to-blue-500/10 rounded-full blur-[90px] animate-float-subtle" />
 
-        {/* 4. Tech Crosshairs & Corner Grid Markers */}
-        <div className="hidden lg:block absolute top-8 left-8 text-blue-400/40 font-mono-tech text-xs select-none">
-          + 01.POS_SYNC // ONLINE
-        </div>
-        <div className="hidden lg:block absolute top-8 right-8 text-blue-400/40 font-mono-tech text-xs select-none">
-          LATENCY: &lt;38MS // CLOUD +
-        </div>
-        <div className="hidden lg:block absolute bottom-8 left-8 text-slate-400/40 font-mono-tech text-xs select-none">
-          [SECURE ENCLAVE 256-BIT]
-        </div>
-        <div className="hidden lg:block absolute bottom-8 right-8 text-slate-400/40 font-mono-tech text-xs select-none">
-          [AUTO GSTR-1 PIPELINE]
-        </div>
-
-        {/* 5. Subtle Tactile Paper Grain Overlay */}
+        {/* Tactile Crumpled Paper Layer */}
         <div
-          className="absolute inset-0 opacity-20 mix-blend-multiply bg-repeat pointer-events-none"
+          className="absolute inset-0 opacity-15 mix-blend-multiply bg-repeat pointer-events-none"
           style={{
             backgroundImage: "url('/crumpled-paper.jpg')",
             backgroundSize: "750px 750px",
@@ -85,25 +71,38 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
 
       <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto relative z-10">
         
-        {/* Main High-Impact Capsule Headline */}
+        {/* High-Converting Pre-Header Capsule */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-slate-200/90 shadow-xs text-xs font-semibold text-slate-800 backdrop-blur-sm"
+        >
+          <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse-live" />
+          <span className="text-slate-600">Built for Indian &amp; Global Retail</span>
+          <span className="text-slate-300">|</span>
+          <span className="text-blue-600 font-bold">100% Offline-First Cloud ERP</span>
+        </motion.div>
+
+        {/* Main High-Impact Unified Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="space-y-3"
         >
-          <h1 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[76px] font-display font-black text-slate-900 tracking-tight leading-[1.12]">
-            <span className="inline-block">The All-in-One Operating System for</span>{" "}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 tracking-tight leading-[1.12]">
+            <span>The Operating System for</span>{" "}
             <br className="hidden sm:inline" />
-            <span className="relative inline-flex items-center justify-center max-w-full min-h-[58px] sm:min-h-[76px] md:min-h-[88px] overflow-hidden align-middle my-2 px-4 sm:px-8 py-1.5 sm:py-2.5 rounded-2xl sm:rounded-3xl bg-[#fcfaf6]/95 border border-[#ded7c7] shadow-[0_12px_35px_-8px_rgba(43,92,253,0.14),inset_0_1.5px_1px_rgba(255,255,255,0.95)] ring-1 ring-blue-50/50 transition-all duration-500">
+            <span className="relative inline-flex items-center justify-center max-w-full min-h-[56px] sm:min-h-[74px] md:min-h-[84px] overflow-hidden align-middle my-2 px-4 sm:px-7 py-1.5 sm:py-2 rounded-2xl sm:rounded-3xl bg-[#fcfaf6]/95 border border-[#ded7c7] shadow-[0_12px_35px_-8px_rgba(43,92,253,0.12),inset_0_1.5px_1px_rgba(255,255,255,0.95)] ring-1 ring-blue-50/50 transition-all duration-500">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={rotatingWords[wordIndex].text}
-                  initial={{ y: 24, opacity: 0, filter: "blur(4px)" }}
+                  initial={{ y: 22, opacity: 0, filter: "blur(4px)" }}
                   animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: -24, opacity: 0, filter: "blur(4px)" }}
+                  exit={{ y: -22, opacity: 0, filter: "blur(4px)" }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-flex items-center gap-2 sm:gap-3.5 font-display font-black tracking-tight whitespace-nowrap select-none text-2xl sm:text-3xl md:text-5xl lg:text-6xl"
+                  className="inline-flex items-center gap-2 sm:gap-3 font-display font-black tracking-tight whitespace-nowrap select-none text-2xl sm:text-3xl md:text-5xl lg:text-6xl"
                 >
                   <span className="text-2xl sm:text-4xl md:text-5xl drop-shadow-xs shrink-0">
                     {rotatingWords[wordIndex].icon}
@@ -117,119 +116,55 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg font-sans font-medium text-slate-700 max-w-3xl mx-auto leading-relaxed pt-2">
-            <span className="font-serif-accent italic text-slate-800 font-normal text-base sm:text-lg md:text-xl">
-              Engineered for{" "}
-            </span>
-            <Highlighter action="highlight" color="#BAE6FD" delay={1.2} className="px-1.5 py-0.5">
-              lightning-speed billing
-            </Highlighter>
-            ,{" "}
-            <Highlighter action="underline" color="#2563EB" delay={1.35}>
-              zero inventory leakages
-            </Highlighter>{" "}
-            &amp;{" "}
-            <Highlighter action="highlight" color="#FEF08A" delay={1.6} className="px-1.5 py-0.5">
-              audit-grade tax filing
-            </Highlighter>
-            .
+            Accelerate counter billing, eliminate stock discrepancies, and automate GST tax filing across all your store branches in real time.
           </p>
         </motion.div>
 
-        {/* Subtitle */}
-        <motion.p
+        {/* Action CTAs */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs sm:text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed font-sans font-medium px-2"
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto"
         >
-          Sub-300ms POS Counter Billing, Real-Time Multi-Warehouse Stock Sync, Automated GSTR-1 &amp; 3B Tax Filing, 
-          1-Click WhatsApp Udhaar Recovery &amp; AI Purchase OCR.
-        </motion.p>
-
-        {/* Action CTAs with Authentic Handwritten Doodle Annotations */}
-        <div className="relative inline-block mx-auto pt-4">
-          {/* Left Handwritten Doodle Note & Curved Arrow */}
-          <div className="hidden md:flex absolute -top-6 -left-48 lg:-left-56 items-center gap-1 font-handwriting text-base lg:text-lg font-bold text-blue-600 pointer-events-none select-none -rotate-6">
-            <span>100% Offline Capable</span>
-            <svg
-              className="w-10 h-10 text-blue-500 shrink-0 transform translate-y-3.5"
-              viewBox="0 0 60 40"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              {/* Smooth organic curve swooshing down-right directly to button corner */}
-              <path d="M 6 8 Q 32 4 48 26" />
-              <path d="M 35 24 Q 45 27 50 28 Q 48 19 46 13" />
-            </svg>
-          </div>
-
-          {/* Right Handwritten Doodle Note & Curved Arrow */}
-          <div className="hidden md:flex absolute -top-6 -right-44 lg:-right-52 items-center gap-1 font-handwriting text-base lg:text-lg font-bold text-emerald-600 pointer-events-none select-none rotate-3">
-            <svg
-              className="w-10 h-10 text-emerald-500 shrink-0 transform translate-y-3.5"
-              viewBox="0 0 60 40"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              {/* Smooth organic curve swooshing down-left directly to button corner */}
-              <path d="M 54 8 Q 28 4 12 26" />
-              <path d="M 25 24 Q 15 27 10 28 Q 12 19 14 13" />
-            </svg>
-            <span>In Real Time ⚡</span>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col gap-2.5 justify-center items-center"
+          <button
+            onClick={onOpenDemoModal}
+            className="w-full sm:w-auto px-8 py-4 btn-primary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
           >
-            <button
-              onClick={onOpenDemoModal}
-              className="w-full sm:w-auto px-8 py-4 btn-primary font-sans text-sm sm:text-base flex items-center justify-center gap-2.5 cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
-            >
-              <span>Book Free 1-on-1 Demo</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <span>Book Free 1-on-1 Demo</span>
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
 
-            {/* Handwritten Sub-note under Button */}
-            <div className="font-handwriting text-xs sm:text-sm text-slate-500 font-bold flex items-center justify-center gap-1">
-              <span>✨ 14-Day Free Access · Zero Setup Fees</span>
-            </div>
-          </motion.div>
-        </div>
+          <button
+            onClick={onOpenSimulator}
+            className="w-full sm:w-auto px-6 py-4 btn-secondary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <span>Interactive Simulator</span>
+          </button>
+        </motion.div>
 
-        {/* Trust Badges with Tech Mono Telemetry */}
+        {/* Trust Badges Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 pt-2"
+          transition={{ delay: 0.35 }}
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-slate-600 pt-3"
         >
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-live shrink-0"></span>
-            <span className="font-mono-tech font-bold text-emerald-700">0ms</span>
-            <span className="font-sans font-semibold text-slate-700">Multi-Counter Sync</span>
-          </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center gap-1.5 bg-white/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="font-mono-tech font-bold text-emerald-700">100%</span>
-            <span className="font-sans font-semibold text-slate-700">Offline Resilience</span>
+            <span className="font-semibold text-slate-800">100% Offline Active Billing</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center gap-1.5 bg-white/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="font-mono-tech font-bold text-blue-700">&lt; 300ms</span>
-            <span className="font-sans font-semibold text-slate-700">Barcode Speed</span>
+            <span className="font-semibold text-slate-800">Real-Time Multi-Store Sync</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center gap-1.5 bg-white/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="font-sans font-semibold text-slate-700">Govt GST Portal JSON Ready</span>
+            <span className="font-semibold text-slate-800">1-Click GSTR-1 &amp; 3B JSON</span>
+          </div>
+          <div className="flex items-center gap-1.5 bg-white/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="font-semibold text-slate-800">Automated WhatsApp Udhaar</span>
           </div>
         </motion.div>
 
