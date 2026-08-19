@@ -1,112 +1,252 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
   Zap,
   Globe,
-  ShieldCheck,
-  Smartphone,
-  Store,
-  Layers,
   Sparkles,
-  ChevronRight,
 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { Highlighter } from "@/components/ui/highlighter";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpenSimulator }) {
+  // Rotating Headline Scrambler Words with Icons
+  const rotatingWords = [
+    { text: "Enterprise POS Counters", icon: "⚡", gradient: "from-blue-600 to-indigo-600" },
+    { text: "Supermarket Chains", icon: "🛒", gradient: "from-blue-600 to-cyan-600" },
+    { text: "Apparel & Garment Hubs", icon: "👔", gradient: "from-indigo-600 to-purple-600" },
+    { text: "Wholesale & FMCG Depots", icon: "📦", gradient: "from-blue-600 to-indigo-600" },
+    { text: "Pharmacy & Retail Chains", icon: "💊", gradient: "from-cyan-600 to-blue-600" },
+    { text: "Multi-Store Retailers", icon: "🏬", gradient: "from-emerald-600 to-teal-600" },
+  ];
+
+  const [wordIndex, setWordIndex] = useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 4200);
+    return () => clearInterval(timer);
+  }, [rotatingWords.length]);
+
   return (
-    <section className="relative pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden text-center select-none">
+    <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none bg-[#f7f5f0]">
       
       {/* ═══════════════════════════════════════════════════
-          RICH VISIBLE ARCHITECTURAL HERO BACKGROUND
+          FULL-WIDTH RICH DYNAMIC HERO BACKGROUND ENGINE
           ═══════════════════════════════════════════════════ */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* 1. Luminous Radial Aurora Mesh Glowing Orbs */}
-        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[850px] sm:w-[1100px] h-[450px] sm:h-[550px] bg-gradient-to-b from-blue-500/20 via-indigo-500/15 to-transparent rounded-full blur-[90px]" />
-        <div className="absolute top-[15%] -left-[10%] w-[500px] h-[400px] bg-gradient-to-tr from-cyan-400/18 to-blue-500/10 rounded-full blur-[85px]" />
-        <div className="absolute top-[10%] -right-[10%] w-[500px] h-[400px] bg-gradient-to-tl from-indigo-500/18 to-purple-500/10 rounded-full blur-[85px]" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
         
-        {/* 2. Distinct Precision Dot-Grid Canvas Overlay */}
-        <div 
-          className="absolute inset-0 opacity-[0.45] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_35%,#000_60%,transparent_100%)]"
+        {/* 1. Authentic Tactile Crumpled Paper Texture Overlay (Full Screen) */}
+        <div
+          className="absolute inset-0 opacity-40 mix-blend-multiply bg-repeat pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(#2563eb 1.2px, transparent 1.2px)`,
-            backgroundSize: '28px 28px'
+            backgroundImage: "url('/crumpled-paper.jpg')",
+            backgroundSize: "750px 750px",
           }}
         />
 
-        {/* 3. Subtle Structural Concentric Accent Rings */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[620px] h-[620px] rounded-full border border-blue-500/15 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[920px] h-[920px] rounded-full border border-dashed border-indigo-400/10 pointer-events-none" />
+        {/* 2. Engineering Blueprint Micro-Grid Matrix with Radial Spotlight */}
+        <div
+          className="absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,#000_40%,transparent_100%)]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(37, 99, 235, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 99, 235, 0.08) 1px, transparent 1px)",
+            backgroundSize: "36px 36px",
+          }}
+        />
+
+        {/* 3. Interactive Live Dynamic Flickering Dot Grid */}
+        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,#000_30%,transparent_100%)] opacity-75">
+          <FlickeringGrid
+            squareSize={3}
+            gridGap={8}
+            color="rgb(37, 99, 235)"
+            maxOpacity={0.3}
+            flickerChance={0.25}
+            className="w-full h-full"
+          />
+        </div>
+
+        {/* 4. Concentric Tech Orbit Radar Rings */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full border border-blue-500/20 animate-spin-slow [animation-duration:90s]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] rounded-full border border-dashed border-indigo-400/20 animate-spin-slow [animation-duration:140s] [animation-direction:reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1120px] h-[1120px] rounded-full border border-blue-400/10" />
+
+        {/* 5. Vibrant Multi-Color Floating Aurora Ambient Glow Orbs */}
+        {/* Core Electric Blue & Cyan Super-Orb */}
+        <div className="absolute top-1/5 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-600/25 via-cyan-400/20 to-indigo-600/20 rounded-full blur-[120px] animate-float-gentle" />
+        {/* Warm Golden Amber & Peach Accent */}
+        <div className="absolute top-1/3 left-1/5 w-[500px] h-[280px] bg-gradient-to-br from-amber-400/15 via-orange-300/10 to-transparent rounded-full blur-[100px] animate-float-subtle" />
+        {/* Emerald Retail Core Accent */}
+        <div className="absolute top-1/3 right-1/5 w-[520px] h-[300px] bg-gradient-to-bl from-emerald-400/18 via-teal-400/12 to-blue-500/15 rounded-full blur-[105px] animate-float-gentle" />
+
+        {/* 6. Silicon Valley Architectural Tech Crosshairs */}
+        <div className="hidden xl:block absolute top-10 left-12 text-blue-600/50 font-mono-tech text-xs select-none tracking-widest">
+          + 01.POS_CORE // LIVE MESH
+        </div>
+        <div className="hidden xl:block absolute top-10 right-12 text-blue-600/50 font-mono-tech text-xs select-none tracking-widest">
+          LATENCY: &lt;38MS // CLOUD_HUB +
+        </div>
+        <div className="hidden xl:block absolute bottom-10 left-12 text-slate-500/50 font-mono-tech text-xs select-none tracking-widest">
+          [ZERO_CRASH_ARCHITECTURE]
+        </div>
+        <div className="hidden xl:block absolute bottom-10 right-12 text-slate-500/50 font-mono-tech text-xs select-none tracking-widest">
+          [AUTO_GSTR_1_AUDIT]
+        </div>
+
+        {/* Bottom subtle edge divider shadow */}
+        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
       </div>
 
-      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto relative z-10">
+      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main High-Impact Enterprise Headline */}
+        {/* Main High-Impact Capsule Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-4"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="space-y-3"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.06]">
-            The Operating System for <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
-              Modern Retail Chains
+          <h1 className="text-[34px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[76px] font-display font-black text-slate-900 tracking-tight leading-[1.12]">
+            <span className="inline-block">The All-in-One Operating System for</span>{" "}
+            <br className="hidden sm:inline" />
+            <span className="relative inline-flex items-center justify-center max-w-full min-h-[58px] sm:min-h-[76px] md:min-h-[88px] overflow-hidden align-middle my-2 px-4 sm:px-8 py-1.5 sm:py-2.5 rounded-2xl sm:rounded-3xl bg-[#fcfaf6]/95 border border-[#ded7c7] shadow-[0_12px_35px_-8px_rgba(43,92,253,0.14),inset_0_1.5px_1px_rgba(255,255,255,0.95)] ring-1 ring-blue-50/50 transition-all duration-500">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[wordIndex].text}
+                  initial={{ y: 24, opacity: 0, filter: "blur(4px)" }}
+                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                  exit={{ y: -24, opacity: 0, filter: "blur(4px)" }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="inline-flex items-center gap-2 sm:gap-3.5 font-display font-black tracking-tight whitespace-nowrap select-none text-2xl sm:text-3xl md:text-5xl lg:text-6xl"
+                >
+                  <span className="text-2xl sm:text-4xl md:text-5xl drop-shadow-xs shrink-0">
+                    {rotatingWords[wordIndex].icon}
+                  </span>
+                  <span className={`bg-gradient-to-r ${rotatingWords[wordIndex].gradient} bg-clip-text text-transparent`}>
+                    {rotatingWords[wordIndex].text}
+                  </span>
+                </motion.span>
+              </AnimatePresence>
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl font-sans font-normal text-slate-600 max-w-3xl mx-auto leading-relaxed pt-2">
-            Accelerate counter billing under 300ms, eliminate inventory discrepancies across depots, and automate GSTR-1 tax compliance with zero offline downtime.
+          <p className="text-sm sm:text-base md:text-lg font-sans font-medium text-slate-700 max-w-3xl mx-auto leading-relaxed pt-2">
+            <span className="font-serif-accent italic text-slate-800 font-normal text-base sm:text-lg md:text-xl">
+              Engineered for{" "}
+            </span>
+            <Highlighter action="highlight" color="#BAE6FD" delay={1.2} className="px-1.5 py-0.5">
+              lightning-speed billing
+            </Highlighter>
+            ,{" "}
+            <Highlighter action="underline" color="#2563EB" delay={1.35}>
+              zero inventory leakages
+            </Highlighter>{" "}
+            &amp;{" "}
+            <Highlighter action="highlight" color="#FEF08A" delay={1.6} className="px-1.5 py-0.5">
+              audit-grade tax filing
+            </Highlighter>
+            .
           </p>
         </motion.div>
 
-        {/* Action CTAs */}
-        <motion.div
+        {/* Subtitle */}
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 w-full max-w-xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-xs sm:text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed font-sans font-medium px-2"
         >
-          <button
-            onClick={onOpenDemoModal}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl btn-primary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all group shrink-0"
-          >
-            <span>Book Free 1-on-1 Demo</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
-          </button>
+          Sub-300ms POS Counter Billing, Real-Time Multi-Warehouse Stock Sync, Automated GSTR-1 &amp; 3B Tax Filing, 
+          1-Click WhatsApp Udhaar Recovery &amp; AI Purchase OCR.
+        </motion.p>
 
-          <button
-            onClick={onOpenSimulator}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-all shadow-xs shrink-0"
-          >
-            <span>Launch Live Simulator</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-        </motion.div>
+        {/* Action CTAs with Authentic Handwritten Doodle Annotations */}
+        <div className="relative inline-block mx-auto pt-4">
+          {/* Left Handwritten Doodle Note & Curved Arrow */}
+          <div className="hidden md:flex absolute -top-6 -left-48 lg:-left-56 items-center gap-1 font-handwriting text-base lg:text-lg font-bold text-blue-600 pointer-events-none select-none -rotate-6">
+            <span>100% Offline Capable</span>
+            <svg
+              className="w-10 h-10 text-blue-500 shrink-0 transform translate-y-3.5"
+              viewBox="0 0 60 40"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {/* Smooth organic curve swooshing down-right directly to button corner */}
+              <path d="M 6 8 Q 32 4 48 26" />
+              <path d="M 35 24 Q 45 27 50 28 Q 48 19 46 13" />
+            </svg>
+          </div>
 
-        {/* Trust Badges Bar */}
+          {/* Right Handwritten Doodle Note & Curved Arrow */}
+          <div className="hidden md:flex absolute -top-6 -right-44 lg:-right-52 items-center gap-1 font-handwriting text-base lg:text-lg font-bold text-emerald-600 pointer-events-none select-none rotate-3">
+            <svg
+              className="w-10 h-10 text-emerald-500 shrink-0 transform translate-y-3.5"
+              viewBox="0 0 60 40"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {/* Smooth organic curve swooshing down-left directly to button corner */}
+              <path d="M 54 8 Q 28 4 12 26" />
+              <path d="M 25 24 Q 15 27 10 28 Q 12 19 14 13" />
+            </svg>
+            <span>In Real Time ⚡</span>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col gap-2.5 justify-center items-center"
+          >
+            <button
+              onClick={onOpenDemoModal}
+              className="w-full sm:w-auto px-8 py-4 btn-primary font-sans text-sm sm:text-base flex items-center justify-center gap-2.5 cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
+            >
+              <span>Book Free 1-on-1 Demo</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            {/* Handwritten Sub-note under Button */}
+            <div className="font-handwriting text-xs sm:text-sm text-slate-500 font-bold flex items-center justify-center gap-1">
+              <span>✨ 14-Day Free Access · Zero Setup Fees</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Trust Badges with Tech Mono Telemetry */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.25 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs text-slate-600 pt-4"
+          transition={{ delay: 0.4 }}
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 pt-2"
         >
-          <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-xs px-3 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            <span className="font-semibold text-slate-800">Sub-300ms Barcode Checkout</span>
+          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-live shrink-0"></span>
+            <span className="font-mono-tech font-bold text-emerald-700">0ms</span>
+            <span className="font-sans font-semibold text-slate-700">Multi-Counter Sync</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-xs px-3 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            <span className="font-semibold text-slate-800">100% Offline Active Mode</span>
+          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="font-mono-tech font-bold text-emerald-700">100%</span>
+            <span className="font-sans font-semibold text-slate-700">Offline Resilience</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-xs px-3 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            <span className="font-semibold text-slate-800">Multi-Depot Real-Time Sync</span>
+          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="font-mono-tech font-bold text-blue-700">&lt; 300ms</span>
+            <span className="font-sans font-semibold text-slate-700">Barcode Speed</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-xs px-3 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            <span className="font-semibold text-slate-800">Govt GSTR-1 JSON Ready</span>
+          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="font-sans font-semibold text-slate-700">Govt GST Portal JSON Ready</span>
           </div>
         </motion.div>
 
