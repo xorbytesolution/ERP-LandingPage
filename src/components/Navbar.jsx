@@ -111,9 +111,6 @@ export default function Navbar({ onOpenTenantModal, onOpenDemoModal, onOpenSimul
                     className="absolute inset-0 bg-[#efe9dc] border border-[#ded5c4] rounded-full -z-10 shadow-2xs"
                   />
                 )}
-                {link.highlight && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                )}
                 <span>{link.name}</span>
               </a>
             );
