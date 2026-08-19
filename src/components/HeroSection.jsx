@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Highlighter } from "@/components/ui/highlighter";
-import { HeroTechBackground } from "@/components/ui/HeroTechBackground";
 
 export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpenSimulator }) {
   // Rotating Headline Scrambler Words with Icons
@@ -33,12 +32,13 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   const activeWord = rotatingWords[wordIndex] || rotatingWords[0];
 
   return (
-    <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none">
+    <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden text-center select-none">
       
-      {/* High-Tech Interactive Cyber Constellation & Glowing Aurora Background (Zero Paper Texture) */}
-      <HeroTechBackground />
+      {/* Soft Ambient Radiance Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/3 w-[450px] h-[220px] bg-cyan-400/8 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto relative z-10">
         
         {/* Main High-Impact Capsule Headline */}
         <motion.div
