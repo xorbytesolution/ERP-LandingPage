@@ -168,7 +168,7 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
           className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 pt-2"
         >
           <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-live shrink-0"></span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="font-mono-tech font-bold text-emerald-700">0ms</span>
             <span className="font-sans font-semibold text-slate-700">Multi-Counter Sync</span>
           </div>
