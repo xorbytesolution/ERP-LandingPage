@@ -125,19 +125,19 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 w-full max-w-2xl mx-auto"
         >
           <button
             onClick={onOpenDemoModal}
-            className="w-full sm:w-auto px-8 py-4 btn-primary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-2xl btn-primary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 whitespace-nowrap cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group shrink-0"
           >
             <span>Book Free 1-on-1 Demo</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
           </button>
 
           <button
             onClick={onOpenSimulator}
-            className="w-full sm:w-auto px-6 py-4 btn-secondary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full sm:w-auto px-6 py-3.5 rounded-2xl btn-secondary font-sans text-sm sm:text-base font-bold flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98] shrink-0"
           >
             <span>Interactive Simulator</span>
           </button>
