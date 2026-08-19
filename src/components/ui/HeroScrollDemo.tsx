@@ -56,7 +56,6 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#ded5c4] pb-4 gap-3 bg-[#f5efe4]/85 -mx-4 -mt-4 sm:-mx-7 sm:-mt-7 px-4 sm:px-7 pt-4 sm:pt-5">
             {/* Store Terminal Identification */}
             <div className="flex items-center gap-2.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse-live shrink-0" />
               <div>
                 <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider leading-none">
                   TERMINAL #01 · BANDRA SUPERMARKET
