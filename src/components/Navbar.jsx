@@ -61,19 +61,11 @@ export default function Navbar({ onOpenTenantModal, onOpenDemoModal, onOpenSimul
         className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto flex items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 relative overflow-hidden ${
           scrolled
             ? scrollDirection === "up"
-              ? "bg-[#fcfaf6]/96 backdrop-blur-2xl border border-[#ded7c7] shadow-[0_16px_40px_-10px_rgba(37,99,235,0.12),inset_0_1.5px_1px_rgba(255,255,255,0.95)]"
-              : "bg-[#fcfaf6]/90 backdrop-blur-2xl border border-[#ded7c7] shadow-[0_12px_30px_-10px_rgba(44,39,32,0.12),inset_0_1.5px_1px_rgba(255,255,255,0.95)]"
-            : "bg-[#fcfaf6]/85 backdrop-blur-xl border border-[#e5ded0] shadow-[0_8px_25px_-5px_rgba(44,39,32,0.08),inset_0_1.5px_1px_rgba(255,255,255,0.9)]"
+              ? "bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-[0_12px_30px_-10px_rgba(0,0,0,0.08)]"
+              : "bg-white/90 backdrop-blur-2xl border border-slate-200 shadow-[0_8px_25px_-10px_rgba(0,0,0,0.06)]"
+            : "bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-xs"
         }`}
       >
-        {/* Distinct Fine Linen Parchment Grain Overlay for Navbar Capsule */}
-        <div
-          className="absolute inset-0 rounded-full pointer-events-none opacity-30 mix-blend-multiply bg-repeat"
-          style={{
-            backgroundImage: "url('/crumpled-paper.jpg')",
-            backgroundSize: "320px 320px",
-          }}
-        />
 
         {/* 1. Brand Logo */}
         <a
