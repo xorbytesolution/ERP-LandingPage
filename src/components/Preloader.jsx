@@ -6,39 +6,29 @@ export default function Preloader({ onLoaded }) {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    // Smooth, cinematic display duration (2.2s)
+    // Display duration for preloader before sliding up (2.2s)
     const timer = setTimeout(() => {
       setIsDone(true);
-      if (onLoaded) onLoaded();
     }, 2200);
 
     return () => clearTimeout(timer);
-  }, [onLoaded]);
-
-  if (isDone) return null;
+  }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onLoaded}>
       {!isDone && (
         <motion.div
           key="clean-paper-preloader"
-          initial={{ opacity: 1, scale: 1 }}
+          initial={{ y: 0 }}
+          animate={{ y: 0 }}
           exit={{
             y: "-100%",
-            rotateX: 8,
-            scale: 0.98,
-            opacity: 0.95,
-            filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.25))",
             transition: {
-              duration: 0.6,
-              ease: [0.76, 0, 0.24, 1], // Apple/Linear luxury sheet slide
+              duration: 0.85,
+              ease: [0.76, 0, 0.24, 1], // Smooth, luxury curtain slide up
             },
           }}
-          className="fixed inset-0 z-[999999] bg-[#f7f5f0] text-slate-900 flex flex-col items-center justify-center select-none overflow-hidden p-6 origin-top"
-          style={{
-            perspective: "1200px",
-            transformStyle: "preserve-3d",
-          }}
+          className="fixed inset-0 z-[999999] bg-[#f7f5f0] text-slate-900 flex flex-col items-center justify-center select-none overflow-hidden p-6 shadow-2xl pointer-events-auto"
         >
           {/* Authentic Clean Physical Crumpled Paper Texture */}
           <div
@@ -78,8 +68,8 @@ export default function Preloader({ onLoaded }) {
             </motion.div>
           </div>
 
-          {/* Bottom Edge Paper Shadow */}
-          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
+          {/* Bottom Edge Paper Shadow / Tear Line */}
+          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/10 to-transparent pointer-events-none border-b border-[#d5cdbe]" />
         </motion.div>
       )}
     </AnimatePresence>
