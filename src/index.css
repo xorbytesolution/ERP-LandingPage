@@ -485,3 +485,18 @@ body {
 .animate-ripple {
   animation: ripple 3s ease-in-out infinite;
 }
+
+/* Gentle Slow Spin for Orbit Rings */
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 90s linear infinite;
+}
+

@@ -4,9 +4,11 @@ import {
   CheckCircle2,
   Zap,
   Globe,
+  Sparkles,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Highlighter } from "@/components/ui/highlighter";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpenSimulator }) {
   // Rotating Headline Scrambler Words with Icons
@@ -31,11 +33,57 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   return (
     <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden text-center select-none">
       
-      {/* Soft Ambient Radiance Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/2 left-1/3 w-[450px] h-[220px] bg-cyan-400/8 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* ═══════════════════════════════════════════════════
+          RICH DYNAMIC HERO BACKGROUND ENGINE
+          ═══════════════════════════════════════════════════ */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+        {/* 1. Interactive Dynamic Flickering Grid with Radial Feather Mask */}
+        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_35%,transparent_100%)] opacity-70">
+          <FlickeringGrid
+            squareSize={3}
+            gridGap={9}
+            color="rgb(37, 99, 235)"
+            maxOpacity={0.25}
+            flickerChance={0.2}
+            className="w-full h-full"
+          />
+        </div>
 
-      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
+        {/* 2. Concentric Orbit Tech Rings */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-blue-400/15 animate-spin-slow [animation-duration:90s]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-dashed border-indigo-400/15 animate-spin-slow [animation-duration:140s] [animation-direction:reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1020px] h-[1020px] rounded-full border border-blue-500/10" />
+
+        {/* 3. Floating Aurora Ambient Glow Orbs */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[340px] bg-gradient-to-tr from-blue-600/18 via-indigo-500/12 to-cyan-400/15 rounded-full blur-[110px] animate-float-gentle" />
+        <div className="absolute top-1/3 left-1/4 w-[480px] h-[260px] bg-gradient-to-br from-cyan-400/12 via-emerald-400/10 to-blue-500/12 rounded-full blur-[95px] animate-float-subtle" />
+        <div className="absolute top-1/2 right-1/4 w-[420px] h-[240px] bg-gradient-to-tl from-purple-500/10 via-blue-500/10 to-amber-400/8 rounded-full blur-[90px] animate-float-gentle" />
+
+        {/* 4. Tech Crosshairs & Corner Grid Markers */}
+        <div className="hidden lg:block absolute top-8 left-8 text-blue-400/40 font-mono-tech text-xs select-none">
+          + 01.POS_SYNC // ONLINE
+        </div>
+        <div className="hidden lg:block absolute top-8 right-8 text-blue-400/40 font-mono-tech text-xs select-none">
+          LATENCY: &lt;38MS // CLOUD +
+        </div>
+        <div className="hidden lg:block absolute bottom-8 left-8 text-slate-400/40 font-mono-tech text-xs select-none">
+          [SECURE ENCLAVE 256-BIT]
+        </div>
+        <div className="hidden lg:block absolute bottom-8 right-8 text-slate-400/40 font-mono-tech text-xs select-none">
+          [AUTO GSTR-1 PIPELINE]
+        </div>
+
+        {/* 5. Subtle Tactile Paper Grain Overlay */}
+        <div
+          className="absolute inset-0 opacity-20 mix-blend-multiply bg-repeat pointer-events-none"
+          style={{
+            backgroundImage: "url('/crumpled-paper.jpg')",
+            backgroundSize: "750px 750px",
+          }}
+        />
+      </div>
+
+      <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto relative z-10">
         
         {/* Main High-Impact Capsule Headline */}
         <motion.div
