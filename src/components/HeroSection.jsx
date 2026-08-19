@@ -35,12 +35,12 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
     <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none z-0">
       
       {/* ═══════════════════════════════════════════════════
-          BESPOKE LUXURY ISOMETRIC PAPER BLUEPRINT HERO BACKGROUND
+          BESPOKE CLEAN ISOMETRIC PAPER BLUEPRINT HERO BACKGROUND
           ═══════════════════════════════════════════════════ */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        {/* 1. Bespoke Luxury Isometric Tech Wallpaper */}
+        {/* 1. Clean Isometric Blueprint Paper Wallpaper */}
         <div
-          className="absolute inset-0 opacity-80 bg-cover bg-center pointer-events-none"
+          className="absolute inset-0 opacity-85 bg-cover bg-center pointer-events-none"
           style={{
             backgroundImage: "url('/hero-bg.jpg')",
           }}
@@ -55,11 +55,7 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
           }}
         />
 
-        {/* 3. Soft Ambient Radiance Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-gradient-to-tr from-blue-600/20 via-cyan-400/20 to-indigo-500/15 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[480px] h-[260px] bg-amber-400/15 rounded-full blur-[90px] pointer-events-none" />
-
-        {/* 4. Bottom Fade Transition into Cockpit Section */}
+        {/* 3. Bottom Fade Transition into Cockpit Section */}
         <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-[#f7f5f0] pointer-events-none" />
       </div>
 
