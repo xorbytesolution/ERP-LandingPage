@@ -34,9 +34,34 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   return (
     <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden text-center select-none">
       
-      {/* Soft Ambient Radiance Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/2 left-1/3 w-[450px] h-[220px] bg-cyan-400/8 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* ═══════════════════════════════════════════════════
+          BESPOKE LUXURY ISOMETRIC PAPER BLUEPRINT HERO BACKGROUND
+          ═══════════════════════════════════════════════════ */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        {/* 1. Bespoke Luxury Isometric Tech Wallpaper */}
+        <div
+          className="absolute inset-0 opacity-45 mix-blend-multiply bg-cover bg-center pointer-events-none"
+          style={{
+            backgroundImage: "url('/hero-bg.jpg')",
+          }}
+        />
+
+        {/* 2. Authentic Tactile Crumpled Paper Texture Overlay (Consistent with Site) */}
+        <div
+          className="absolute inset-0 opacity-35 mix-blend-multiply bg-repeat pointer-events-none"
+          style={{
+            backgroundImage: "url('/crumpled-paper.jpg')",
+            backgroundSize: "700px 700px",
+          }}
+        />
+
+        {/* 3. Soft Ambient Radiance Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-gradient-to-tr from-blue-600/15 via-cyan-400/15 to-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[480px] h-[260px] bg-amber-400/10 rounded-full blur-[90px] pointer-events-none" />
+
+        {/* 4. Bottom Fade Transition into Cockpit Section */}
+        <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-b from-transparent to-[#f7f5f0] pointer-events-none" />
+      </div>
 
       <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto relative z-10">
         
