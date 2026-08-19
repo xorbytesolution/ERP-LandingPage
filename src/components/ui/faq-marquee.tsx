@@ -15,7 +15,7 @@ interface FaqMarqueeProps {
 
 export function FaqCard({ q, a, category }: FaqItem) {
   return (
-    <div className="group/card w-[300px] sm:w-[360px] md:w-[400px] shrink-0 p-5 sm:p-6 rounded-3xl bg-[#fcfaf6]/95 backdrop-blur-xl border border-[#ded7c7] hover:border-blue-400/90 shadow-[0_4px_20px_rgba(44,39,32,0.05),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_12px_30px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300 select-none text-left flex flex-col justify-between space-y-3 cursor-pointer">
+    <div className="group/card w-[280px] sm:w-[360px] md:w-[400px] shrink-0 p-5 sm:p-6 rounded-3xl bg-[#fcfaf6]/95 backdrop-blur-xl border border-[#ded7c7] hover:border-blue-400/90 shadow-[0_4px_20px_rgba(44,39,32,0.05),inset_0_1.5px_1px_rgba(255,255,255,0.95)] hover:shadow-[0_12px_30px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300 select-none text-left flex flex-col justify-between space-y-3 cursor-pointer">
       <div className="space-y-2">
         {category && (
           <span className="text-[10px] font-mono-tech font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200/60 inline-block">
@@ -42,13 +42,13 @@ export function FaqMarquee({ faqs, className }: FaqMarqueeProps) {
   return (
     <div
       className={cn(
-        "relative flex w-full flex-col items-center justify-center overflow-hidden gap-4 py-6 select-none",
+        "relative flex w-full flex-col items-center justify-center overflow-hidden gap-4 py-4 sm:py-6 select-none",
         className
       )}
     >
       {/* Left & Right Gradient Blur Fade Masks Matching Paper Canvas */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#f5f2ea] via-[#f5f2ea]/80 to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#f5f2ea] via-[#f5f2ea]/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-36 bg-gradient-to-r from-[#f5f2ea] via-[#f5f2ea]/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-36 bg-gradient-to-l from-[#f5f2ea] via-[#f5f2ea]/80 to-transparent z-10" />
 
       {/* Row 1: Forward Marquee (Leftwards) */}
       <Marquee pauseOnHover className="[--duration:45s] [--gap:1.25rem]">

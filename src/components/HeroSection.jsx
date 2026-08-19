@@ -186,26 +186,26 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 pt-2"
+          className="grid grid-cols-2 gap-2 max-w-sm mx-auto sm:max-w-none sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-3 text-[11px] sm:text-xs text-slate-600 pt-2"
         >
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center justify-center gap-1.5 bg-white/95 px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="font-mono-tech font-bold text-emerald-700">0ms</span>
             <span className="font-sans font-semibold text-slate-700">Multi-Counter Sync</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center justify-center gap-1.5 bg-white/95 px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="font-mono-tech font-bold text-emerald-700">100%</span>
             <span className="font-sans font-semibold text-slate-700">Offline Resilience</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center justify-center gap-1.5 bg-white/95 px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span className="font-mono-tech font-bold text-blue-700">&lt; 300ms</span>
             <span className="font-sans font-semibold text-slate-700">Barcode Speed</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center justify-center gap-1.5 bg-white/95 px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="font-sans font-semibold text-slate-700">Govt GST Portal JSON Ready</span>
+            <span className="font-sans font-semibold text-slate-700">Govt GST Ready</span>
           </div>
         </motion.div>
 

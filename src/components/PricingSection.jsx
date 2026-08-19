@@ -116,14 +116,14 @@ export default function PricingSection({ onOpenDemoModal }) {
                 </span>
               </button>
             </div>
-            <div className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            <div className="text-[11px] sm:text-xs font-semibold text-emerald-800 bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200 text-center max-w-md mx-auto leading-normal">
               Includes 2 Months Free &amp; Free Tally Data Migration with Annual Plans
             </div>
           </div>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left items-stretch pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 text-left items-stretch pt-6 sm:pt-8">
           {plans.map((plan, idx) => {
             const IconComp = plan.icon;
             return (
@@ -133,15 +133,14 @@ export default function PricingSection({ onOpenDemoModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className={`p-8 flex flex-col justify-between space-y-8 relative rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_12px_35px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] transition-all duration-300 ${
+                className={`p-6 sm:p-8 flex flex-col justify-between space-y-6 sm:space-y-8 relative rounded-3xl border border-[#ded7c7] bg-[#fcfaf6]/95 backdrop-blur-xl shadow-[0_12px_35px_rgba(44,39,32,0.06),inset_0_1.5px_1px_rgba(255,255,255,0.95)] transition-all duration-300 ${
                   plan.highlight
-                    ? "border-2 border-blue-600 shadow-2xl shadow-blue-500/15 ring-4 ring-blue-500/10 lg:-translate-y-5 lg:scale-[1.03] z-10"
+                    ? "border-2 border-blue-600 shadow-2xl shadow-blue-500/15 ring-4 ring-blue-500/10 lg:-translate-y-5 lg:scale-[1.03] z-10 mt-3 lg:mt-0"
                     : "hover:border-blue-300 hover:shadow-xl lg:translate-y-0"
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap tracking-wider flex items-center gap-1.5 z-20">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[10px] sm:text-[11px] font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap tracking-wider flex items-center justify-center z-20">
                     <span>{plan.badge}</span>
                   </div>
                 )}

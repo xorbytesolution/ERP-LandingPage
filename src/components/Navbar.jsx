@@ -54,17 +54,11 @@ export default function Navbar({ onOpenTenantModal, onOpenDemoModal, onOpenSimul
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6 pt-3 sm:pt-4 pointer-events-none ${
-      scrollDirection === "down" && scrolled ? "translate-y-[-4px] opacity-92" : "translate-y-0 opacity-100"
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6 pt-2.5 sm:pt-4 pointer-events-none ${
+      scrollDirection === "down" && scrolled ? "-translate-y-24 opacity-0 sm:translate-y-0 sm:opacity-100" : "translate-y-0 opacity-100"
     }`}>
       <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto flex items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 relative overflow-hidden ${
-          scrolled
-            ? scrollDirection === "up"
-              ? "bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-[0_12px_30px_-10px_rgba(0,0,0,0.08)]"
-              : "bg-white/90 backdrop-blur-2xl border border-slate-200 shadow-[0_8px_25px_-10px_rgba(0,0,0,0.06)]"
-            : "bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-xs"
-        }`}
+        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto flex items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 relative overflow-hidden bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)]`}
       >
 
         {/* 1. Brand Logo */}
