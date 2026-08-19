@@ -40,10 +40,10 @@ export function ScrollPerspectiveCard({
     [0.85, 1, 1, 0.85]
   );
 
-  // Ultra-creamy spring physics
-  const rotateX = useSpring(rawRotate, { stiffness: 95, damping: 22, mass: 0.5, restDelta: 0.001 });
-  const scale = useSpring(rawScale, { stiffness: 95, damping: 22, mass: 0.5, restDelta: 0.001 });
-  const opacity = useSpring(rawOpacity, { stiffness: 95, damping: 22, mass: 0.5, restDelta: 0.001 });
+  // Ultra-creamy, snappy spring physics (locked with smooth scroll, zero sluggishness)
+  const rotateX = useSpring(rawRotate, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
+  const scale = useSpring(rawScale, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
+  const opacity = useSpring(rawOpacity, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
 
   return (
     <div

@@ -32,24 +32,25 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [0.93, 1] : [0.94, 1.01];
+    return isMobile ? [0.95, 1] : [0.94, 1];
   };
 
-  // Luxury Apple/Awwwards-grade unfolding 3D perspective
-  // Unfolds smoothly from 18deg tilt into pristine flat 0deg reading plane with zero distortion
-  const rawRotate = useTransform(scrollYProgress, [0, 0.85], [18, 0]);
-  const rawScale = useTransform(scrollYProgress, [0, 0.85], scaleDimensions());
-  const rawTranslate = useTransform(scrollYProgress, [0, 0.85], [35, 0]);
-  const sheenTranslate = useTransform(scrollYProgress, [0, 1], ["-100%", "240%"]);
+  // Silky Smooth, Responsive Apple/Linear-grade 3D Unfolding
+  // Natural subtle tilt (10deg to 0deg) that responds instantly to user scroll without lag
+  const rawRotate = useTransform(scrollYProgress, [0, 0.9], [isMobile ? 8 : 12, 0]);
+  const rawScale = useTransform(scrollYProgress, [0, 0.9], scaleDimensions());
+  const rawTranslate = useTransform(scrollYProgress, [0, 0.9], [25, 0]);
+  const sheenTranslate = useTransform(scrollYProgress, [0, 1], ["-100%", "260%"]);
 
-  const rotate = useSpring(rawRotate, { stiffness: 85, damping: 20, mass: 0.6, restDelta: 0.001 });
-  const scale = useSpring(rawScale, { stiffness: 85, damping: 20, mass: 0.6, restDelta: 0.001 });
-  const translate = useSpring(rawTranslate, { stiffness: 85, damping: 20, mass: 0.6, restDelta: 0.001 });
+  // Snappy, organic spring physics (no sluggish lag, locked 60/120fps sync with scroll wheel)
+  const rotate = useSpring(rawRotate, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
+  const scale = useSpring(rawScale, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
+  const translate = useSpring(rawTranslate, { stiffness: 260, damping: 30, mass: 0.2, restDelta: 0.001 });
 
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center relative px-3 sm:px-6 lg:px-8 py-8 sm:py-14",
+        "flex flex-col items-center justify-center relative px-3 sm:px-6 lg:px-8 py-6 sm:py-12",
         className
       )}
       ref={containerRef}
@@ -57,7 +58,7 @@ export const ContainerScroll = ({
       <div
         className="w-full relative"
         style={{
-          perspective: "1400px",
+          perspective: "1200px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
@@ -81,7 +82,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="max-w-4xl mx-auto text-center relative z-10 mb-6 sm:mb-8"
+      className="max-w-4xl mx-auto text-center relative z-10 mb-5 sm:mb-7"
     >
       {titleComponent}
     </motion.div>
@@ -110,9 +111,10 @@ export const Card = ({
         transformOrigin: "center top",
         transformStyle: "preserve-3d",
         willChange: "transform",
+        backfaceVisibility: "hidden",
       }}
       className={cn(
-        "max-w-5xl mx-auto w-full border border-[#ded7c7] p-2.5 sm:p-3 bg-[#fcfaf6]/95 rounded-[28px] sm:rounded-[36px] shadow-[0_25px_60px_-15px_rgba(44,39,32,0.14),inset_0_1.5px_1px_rgba(255,255,255,0.95)] transition-all backdrop-blur-xl relative overflow-hidden",
+        "max-w-5xl mx-auto w-full border border-[#ded7c7] p-2.5 sm:p-3 bg-[#fcfaf6]/95 rounded-[24px] sm:rounded-[36px] shadow-[0_25px_60px_-15px_rgba(44,39,32,0.12),inset_0_1.5px_1px_rgba(255,255,255,0.95)] backdrop-blur-xl relative overflow-hidden",
         className
       )}
     >
@@ -120,14 +122,15 @@ export const Card = ({
       {sheenTranslate && (
         <motion.div
           style={{ x: sheenTranslate }}
-          className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] pointer-events-none z-30"
+          className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-[-25deg] pointer-events-none z-30"
         />
       )}
 
       {/* Inner Screen Bezel */}
-      <div className="h-full w-full overflow-hidden rounded-[20px] sm:rounded-[28px] bg-white border border-slate-200 shadow-xs">
+      <div className="h-full w-full overflow-hidden rounded-[18px] sm:rounded-[28px] bg-white border border-slate-200 shadow-xs">
         {children}
       </div>
     </motion.div>
   );
 };
+
