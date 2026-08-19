@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Highlighter } from "@/components/ui/highlighter";
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { HeroTechBackground } from "@/components/ui/HeroTechBackground";
 
 export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpenSimulator }) {
   // Rotating Headline Scrambler Words with Icons
@@ -31,74 +31,10 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   }, [rotatingWords.length]);
 
   return (
-    <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none bg-[#f7f5f0]">
+    <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none">
       
-      {/* ═══════════════════════════════════════════════════
-          FULL-WIDTH RICH DYNAMIC HERO BACKGROUND ENGINE
-          ═══════════════════════════════════════════════════ */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
-        
-        {/* 1. Authentic Tactile Crumpled Paper Texture Overlay (Full Screen) */}
-        <div
-          className="absolute inset-0 opacity-40 mix-blend-multiply bg-repeat pointer-events-none"
-          style={{
-            backgroundImage: "url('/crumpled-paper.jpg')",
-            backgroundSize: "750px 750px",
-          }}
-        />
-
-        {/* 2. Engineering Blueprint Micro-Grid Matrix with Radial Spotlight */}
-        <div
-          className="absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,#000_40%,transparent_100%)]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(37, 99, 235, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 99, 235, 0.08) 1px, transparent 1px)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-
-        {/* 3. Interactive Live Dynamic Flickering Dot Grid */}
-        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,#000_30%,transparent_100%)] opacity-75">
-          <FlickeringGrid
-            squareSize={3}
-            gridGap={8}
-            color="rgb(37, 99, 235)"
-            maxOpacity={0.3}
-            flickerChance={0.25}
-            className="w-full h-full"
-          />
-        </div>
-
-        {/* 4. Concentric Tech Orbit Radar Rings */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full border border-blue-500/20 animate-spin-slow [animation-duration:90s]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] rounded-full border border-dashed border-indigo-400/20 animate-spin-slow [animation-duration:140s] [animation-direction:reverse]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1120px] h-[1120px] rounded-full border border-blue-400/10" />
-
-        {/* 5. Vibrant Multi-Color Floating Aurora Ambient Glow Orbs */}
-        {/* Core Electric Blue & Cyan Super-Orb */}
-        <div className="absolute top-1/5 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-blue-600/25 via-cyan-400/20 to-indigo-600/20 rounded-full blur-[120px] animate-float-gentle" />
-        {/* Warm Golden Amber & Peach Accent */}
-        <div className="absolute top-1/3 left-1/5 w-[500px] h-[280px] bg-gradient-to-br from-amber-400/15 via-orange-300/10 to-transparent rounded-full blur-[100px] animate-float-subtle" />
-        {/* Emerald Retail Core Accent */}
-        <div className="absolute top-1/3 right-1/5 w-[520px] h-[300px] bg-gradient-to-bl from-emerald-400/18 via-teal-400/12 to-blue-500/15 rounded-full blur-[105px] animate-float-gentle" />
-
-        {/* 6. Silicon Valley Architectural Tech Crosshairs */}
-        <div className="hidden xl:block absolute top-10 left-12 text-blue-600/50 font-mono-tech text-xs select-none tracking-widest">
-          + 01.POS_CORE // LIVE MESH
-        </div>
-        <div className="hidden xl:block absolute top-10 right-12 text-blue-600/50 font-mono-tech text-xs select-none tracking-widest">
-          LATENCY: &lt;38MS // CLOUD_HUB +
-        </div>
-        <div className="hidden xl:block absolute bottom-10 left-12 text-slate-500/50 font-mono-tech text-xs select-none tracking-widest">
-          [ZERO_CRASH_ARCHITECTURE]
-        </div>
-        <div className="hidden xl:block absolute bottom-10 right-12 text-slate-500/50 font-mono-tech text-xs select-none tracking-widest">
-          [AUTO_GSTR_1_AUDIT]
-        </div>
-
-        {/* Bottom subtle edge divider shadow */}
-        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
-      </div>
+      {/* High-Tech Interactive Cyber Constellation & Glowing Aurora Background (Zero Paper Texture) */}
+      <HeroTechBackground />
 
       <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
