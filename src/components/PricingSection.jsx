@@ -76,9 +76,6 @@ export default function PricingSection({ onOpenDemoModal }) {
         
         {/* Section Header */}
         <div className="space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
-            <span>Transparent Pricing</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.2]">
             Predictable Enterprise Plans <br className="hidden sm:inline" />
             <span className="text-blue-600">

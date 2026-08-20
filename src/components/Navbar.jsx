@@ -58,8 +58,10 @@ export default function Navbar({ onOpenTenantModal, onOpenDemoModal, onOpenSimul
       scrollDirection === "down" && scrolled ? "-translate-y-24 opacity-0 sm:translate-y-0 sm:opacity-100" : "translate-y-0 opacity-100"
     }`}>
       <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto flex items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 relative overflow-hidden bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)]`}
+        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto flex items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 relative overflow-hidden bg-white/50 backdrop-blur-3xl backdrop-saturate-200 border border-white/80 shadow-[0_20px_50px_-10px_rgba(15,23,42,0.12),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-1px_2px_rgba(0,0,0,0.04)] ring-1 ring-black/5`}
       >
+        {/* iOS Liquid Glass Specular Surface Reflection */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/10 to-transparent pointer-events-none rounded-full" />
 
         {/* 1. Brand Logo */}
         <a

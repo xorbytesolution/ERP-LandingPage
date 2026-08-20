@@ -39,3 +39,4 @@ export * from "./particle-button";
 export * from "./glow-input";
 export * from "./hyper-text";
 export * from "./border-beam";
+export * from "./radial-arc-showcase";

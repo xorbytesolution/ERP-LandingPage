@@ -1,46 +1,32 @@
 import React, { useState } from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import {
-  Sparkles,
   Zap,
-  ShieldCheck,
-  ShoppingCart,
-  ArrowRight,
-  Activity,
-  Receipt,
-  Store,
-  Layers,
-  BarChart3,
   TrendingUp,
-  CreditCard,
+  ShoppingCart,
   QrCode,
+  CreditCard,
+  Banknote,
   CheckCircle2,
-  Cpu,
-  Radio,
+  Barcode,
+  Sparkles,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 
 export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => void }) {
-  const [activeTab, setActiveTab] = useState<"pos" | "stock" | "gst">("pos");
+  const [activePayment, setActivePayment] = useState<"upi" | "cash" | "card">("upi");
 
   return (
-    <section className="flex flex-col overflow-hidden bg-transparent py-14 md:py-22 text-slate-900 border-t border-[#e5ded0] relative select-none">
+    <section className="flex flex-col overflow-hidden bg-transparent py-12 md:py-18 text-slate-900 border-t border-[#e5ded0]/60 relative select-none">
       
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-blue-400/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-[450px] h-[250px] bg-indigo-400/8 rounded-full blur-3xl pointer-events-none" />
+      {/* Soft background ambient lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-400/8 rounded-full blur-3xl pointer-events-none" />
       
       <ContainerScroll
         titleComponent={
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
-              <span>Interactive Cockpit Preview</span>
-            </div>
+          <div className="space-y-2.5 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-slate-900 leading-tight">
               Enterprise Store Intelligence <br className="hidden sm:inline" />
-              <span className="text-blue-600">
-                On One Unified Terminal
-              </span>
+              <span className="text-blue-600">On One Unified Terminal</span>
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base font-sans max-w-xl mx-auto font-medium leading-relaxed">
@@ -49,246 +35,154 @@ export function HeroScrollDemo({ onOpenDemoModal }: { onOpenDemoModal?: () => vo
           </div>
         }
       >
-        {/* Inside 3D Display Frame: Pure Luxury Light Glass Terminal */}
-        <div className="w-full bg-[#fcfaf6]/95 text-slate-900 p-4 sm:p-7 flex flex-col justify-between overflow-hidden relative font-sans space-y-5 select-none">
+        {/* Clean, Single-Layer Terminal Screen (Zero Nested Borders) */}
+        <div className="w-full bg-[#fbf9f5] text-slate-900 flex flex-col font-sans select-none">
           
-          {/* Top Enterprise Cockpit Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#ded5c4] pb-4 gap-3 bg-[#f5efe4]/85 -mx-4 -mt-4 sm:-mx-7 sm:-mt-7 px-4 sm:px-7 pt-4 sm:pt-5">
-            {/* Store Terminal Identification */}
-            <div className="flex items-center gap-2.5">
-              <div>
-                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider leading-none">
-                  TERMINAL #01 · BANDRA SUPERMARKET
-                </div>
-                <div className="text-xs font-black text-slate-900 flex items-center gap-1.5 mt-0.5">
-                  <span>XORBYTE CLOUD ERP</span>
-                  <span className="text-[9px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-200">
-                    LIVE SYNC 0ms
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Module Switcher Pills */}
-            <div className="flex items-center gap-1 bg-[#ede6d8] p-1 rounded-xl border border-[#ded5c4]">
-              {[
-                { id: "pos", label: "POS Billing", icon: ShoppingCart },
-                { id: "stock", label: "Stock Mesh", icon: Layers },
-                { id: "gst", label: "GST Ledger", icon: BarChart3 },
-              ].map((tab) => {
-                const IconComp = tab.icon;
-                const isSelected = activeTab === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
-                      isSelected
-                        ? "bg-white text-slate-900 shadow-sm"
-                        : "text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    <IconComp className="w-3.5 h-3.5" />
-                    <span>{tab.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Offline PWA Status Tag */}
-            <div className="hidden lg:flex items-center gap-2 text-xs">
-              <span className="text-[10px] font-bold text-slate-600 bg-white/90 px-2.5 py-1 rounded-full border border-[#ded5c4] shadow-2xs">
-                INDEXEDDB OFFLINE: READY
+          {/* ─── 1. Clean Window Title Bar (No Apple Dots) ─── */}
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#f5efe4] border-b border-[#e2dcd0]">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-slate-800 font-sans">
+                Xorbyte Retail POS Terminal · Bandra Outlet #01
               </span>
+            </div>
+
+            <div className="flex items-center gap-2 text-xs font-semibold">
+              <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full text-[11px] font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Live Cloud Sync (0ms)
+              </span>
+              <span className="hidden md:inline text-slate-500 text-[11px]">IndexedDB Offline Ready</span>
             </div>
           </div>
 
-          {/* Dynamic Tab Body */}
-          <AnimatePresence mode="wait">
-            {activeTab === "pos" && (
-              <motion.div
-                key="pos"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4 pt-1 text-left"
-              >
-                {/* 3 Metric Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                  <div className="p-4 rounded-2xl bg-[#f5efe4]/80 border border-[#ded5c4] shadow-2xs space-y-1.5">
-                    <div className="flex items-center justify-between text-[11px] font-mono-tech text-slate-500">
-                      <span>TODAY&apos;S REVENUE</span>
-                      <span className="text-emerald-600 flex items-center gap-0.5 font-bold">
-                        <TrendingUp className="w-3 h-3" /> +34.2%
-                      </span>
-                    </div>
-                    <div className="text-2xl font-mono-tech font-black text-slate-900 tracking-tight">₹4,82,450.00</div>
-                    <div className="text-[10px] text-slate-500 font-mono-tech">1,420 Receipts · 3 Counters Live</div>
+          {/* ─── 2. Clean Split Workspace ─── */}
+          <div className="p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-5 text-left bg-white">
+            
+            {/* Left Column (7 cols): Clean Active POS Billing Counter */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                    <ShoppingCart className="w-4 h-4" />
                   </div>
-
-                  <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-200/80 shadow-2xs space-y-1.5">
-                    <div className="flex items-center justify-between text-[11px] font-mono-tech text-blue-700">
-                      <span>BARCODE SCAN SPEED</span>
-                      <span className="text-blue-600 font-bold">&lt; 300ms</span>
-                    </div>
-                    <div className="text-2xl font-mono-tech font-black text-blue-700 tracking-tight">0.18s / Scan</div>
-                    <div className="text-[10px] text-blue-600/80 font-mono-tech">Laser Barcode + 80mm ESC/POS</div>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200/80 shadow-2xs space-y-1.5">
-                    <div className="flex items-center justify-between text-[11px] font-mono-tech text-indigo-700">
-                      <span>GST AUDIT STATUS</span>
-                      <span className="text-indigo-600 font-bold">100% OK</span>
-                    </div>
-                    <div className="text-2xl font-mono-tech font-black text-indigo-700 tracking-tight">GSTR-1 Ready</div>
-                    <div className="text-[10px] text-indigo-600/80 font-mono-tech">Auto HSN Slabs &amp; E-Invoice IRN</div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Current Customer Cart</div>
+                    <div className="text-[10px] text-slate-500">Invoice #INV-9842 · Cashier Terminal 01</div>
                   </div>
                 </div>
 
-                {/* Live Real-Time Transaction Receipts Flow */}
-                <div className="p-4 rounded-2xl bg-[#f5efe4]/75 border border-[#ded5c4] space-y-2.5">
-                  <div className="flex items-center justify-between text-xs font-mono-tech text-slate-600">
-                    <span className="flex items-center gap-1.5 font-bold text-blue-600">
-                      <Receipt className="w-3.5 h-3.5" /> LIVE STORE TRANSACTIONS (STREAMING)
-                    </span>
-                    <span className="text-[10px] text-emerald-600 font-bold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                      Live Feed
-                    </span>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-mono-tech">
-                    <div className="p-3 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs flex items-center justify-between hover:border-blue-300 transition-colors">
-                      <div>
-                        <div className="font-bold text-slate-900">#INV-9812</div>
-                        <div className="text-[10px] text-slate-500">Nestle KitKat (x4)</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-emerald-600 font-bold">₹240</div>
-                        <div className="text-[9px] text-blue-600 font-bold">UPI QR</div>
-                      </div>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs flex items-center justify-between hover:border-blue-300 transition-colors">
-                      <div>
-                        <div className="font-bold text-slate-900">#INV-9813</div>
-                        <div className="text-[10px] text-slate-500">Amul Butter (x2)</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-emerald-600 font-bold">₹550</div>
-                        <div className="text-[9px] text-slate-500 font-bold">CASH</div>
-                      </div>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs flex items-center justify-between hover:border-blue-300 transition-colors">
-                      <div>
-                        <div className="font-bold text-slate-900">#INV-9814</div>
-                        <div className="text-[10px] text-slate-500">Sunflower Oil (x1)</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-emerald-600 font-bold">₹195</div>
-                        <div className="text-[9px] text-emerald-600 font-bold">WHATSAPP</div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg">
+                  <Barcode className="w-3.5 h-3.5" />
+                  <span>Laser Scan Active</span>
                 </div>
-              </motion.div>
-            )}
-
-            {activeTab === "stock" && (
-              <motion.div
-                key="stock"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4 pt-1 text-left"
-              >
-                <div className="p-4 rounded-2xl bg-[#f5efe4]/80 border border-[#ded5c4] space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono-tech text-slate-700">
-                    <span className="font-bold text-blue-600 flex items-center gap-1.5">
-                      <Store className="w-4 h-4" /> MULTI-BRANCH INVENTORY MATRIX
-                    </span>
-                    <span className="text-emerald-600 text-[10px] font-bold">SSE Protocol Active</span>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono-tech">
-                    <div className="p-3.5 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs space-y-1">
-                      <div className="text-slate-500 font-bold">Central Depot (Mumbai)</div>
-                      <div className="text-xl font-black text-slate-900">18,450 Units</div>
-                      <div className="text-[10px] text-emerald-600 font-bold">● Safe Stock Level</div>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs space-y-1">
-                      <div className="text-slate-500 font-bold">Outlet #1 (Bandra Mart)</div>
-                      <div className="text-xl font-black text-blue-600">2,410 Units</div>
-                      <div className="text-[10px] text-blue-600 font-bold">● Live Counter Synced</div>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-white/95 border border-[#ded5c4] shadow-2xs space-y-1">
-                      <div className="text-slate-500 font-bold">Outlet #2 (Andheri Hub)</div>
-                      <div className="text-xl font-black text-amber-600">850 Units</div>
-                      <div className="text-[10px] text-amber-600 font-bold">● Reorder Triggered</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {activeTab === "gst" && (
-              <motion.div
-                key="gst"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4 pt-1 text-left"
-              >
-                <div className="p-4 rounded-2xl bg-slate-50/90 border border-slate-200 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono-tech text-slate-700">
-                    <span className="font-bold text-indigo-600 flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4" /> 1-CLICK GST COMPLIANCE &amp; IRN ENGINE
-                    </span>
-                    <span className="text-emerald-600 text-[10px] font-bold">Govt GST Portal JSON Ready</span>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono-tech">
-                    <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1">
-                      <div className="text-slate-500 font-bold">GSTR-1 Audit Output</div>
-                      <div className="text-xl font-black text-slate-900">₹48,920 Tax Compiled</div>
-                      <div className="text-[10px] text-indigo-600 font-bold">0 Mismatches · 100% Tax Compliant</div>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1">
-                      <div className="text-slate-500 font-bold">Instant e-Invoice IRN Token</div>
-                      <div className="text-xl font-black text-emerald-600">IRN: 8943...92a1</div>
-                      <div className="text-[10px] text-slate-500 font-bold">256-Bit Cryptographic Signature</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Bottom Floating Command & Conversion Bar */}
-          <div className="p-3.5 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/80 to-blue-50 border border-blue-200/90 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs shrink-0">
-                <Zap className="w-4 h-4" />
               </div>
-              <div>
-                <div className="text-xs font-bold text-slate-900">Deploy zero-crash POS counters for your retail stores</div>
-                <div className="text-[10px] text-slate-600 font-medium font-sans">Zero setup fees · Guided 1-on-1 inventory &amp; billing migration</div>
+
+              {/* Product Lines List */}
+              <div className="space-y-2 border border-slate-100 rounded-2xl p-2 bg-slate-50/50">
+                {[
+                  { name: "Amul Taaza T-Special Milk 500ml", qty: "2x", rate: "₹28", total: "₹56", hsn: "040120" },
+                  { name: "Aashirvaad Shudh Chakki Atta 5kg", qty: "1x", rate: "₹235", total: "₹235", hsn: "110100" },
+                  { name: "Nestle KitKat Share Bag 4-Finger", qty: "1x", rate: "₹49", total: "₹49", hsn: "180690" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-100 shadow-2xs text-xs font-medium"
+                  >
+                    <div>
+                      <div className="font-bold text-slate-900">{item.name}</div>
+                      <div className="text-[10px] text-slate-400 font-mono">HSN: {item.hsn} · {item.qty} @ {item.rate}</div>
+                    </div>
+                    <div className="text-right font-bold text-slate-900 text-sm">{item.total}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Payment Mode Selector & Instant Checkout */}
+              <div className="flex items-center justify-between pt-1 gap-2">
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => setActivePayment("upi")}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
+                      activePayment === "upi" ? "bg-blue-600 text-white shadow-sm" : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    <QrCode className="w-3 h-3" /> UPI QR
+                  </button>
+                  <button
+                    onClick={() => setActivePayment("cash")}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
+                      activePayment === "cash" ? "bg-blue-600 text-white shadow-sm" : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    <Banknote className="w-3 h-3" /> Cash
+                  </button>
+                  <button
+                    onClick={() => setActivePayment("card")}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
+                      activePayment === "card" ? "bg-blue-600 text-white shadow-sm" : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    <CreditCard className="w-3 h-3" /> Card
+                  </button>
+                </div>
+
+                <div className="text-right">
+                  <span className="text-[10px] text-slate-500 block leading-none">Total Bill</span>
+                  <span className="text-xl font-display font-black text-blue-600">₹340.00</span>
+                </div>
               </div>
             </div>
-            <button
-              onClick={onOpenDemoModal}
-              className="w-full sm:w-auto px-4.5 py-2 rounded-xl btn-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shrink-0 group"
-            >
-              <span>Schedule 1-on-1 Demo</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </button>
+
+            {/* Right Column (5 cols): Clean Live Store Metrics */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-3 bg-[#fbf9f5] p-4 rounded-2xl border border-[#ded7c7]/80">
+              <div className="space-y-3">
+                <div className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                  Store Performance Live
+                </div>
+
+                {/* Metric 1 */}
+                <div className="p-3 rounded-xl bg-white border border-slate-100 shadow-2xs space-y-0.5">
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-semibold">
+                    <span>Today&apos;s Store Revenue</span>
+                    <span className="text-emerald-600 font-bold flex items-center gap-0.5 text-[11px]">
+                      <TrendingUp className="w-3 h-3" /> +34.2%
+                    </span>
+                  </div>
+                  <div className="text-2xl font-display font-black text-slate-900">₹4,82,450</div>
+                  <div className="text-[10px] text-slate-400">1,420 Receipts · 3 Counters Live</div>
+                </div>
+
+                {/* Metric 2 */}
+                <div className="p-3 rounded-xl bg-white border border-slate-100 shadow-2xs space-y-0.5">
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-semibold">
+                    <span>Barcode Scan Latency</span>
+                    <span className="text-blue-600 font-bold text-[11px]">&lt; 300ms</span>
+                  </div>
+                  <div className="text-xl font-display font-bold text-blue-600">0.18s / Item Scan</div>
+                  <div className="text-[10px] text-slate-400">Zero queue freeze under heavy rush</div>
+                </div>
+
+                {/* Metric 3 */}
+                <div className="p-3 rounded-xl bg-white border border-slate-100 shadow-2xs space-y-0.5">
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-semibold">
+                    <span>GST Audit Status</span>
+                    <span className="text-emerald-600 font-bold text-[11px]">100% OK</span>
+                  </div>
+                  <div className="text-lg font-display font-bold text-slate-900">GSTR-1 CA Ready</div>
+                  <div className="text-[10px] text-slate-400">Auto HSN Slabs &amp; E-Way Integration</div>
+                </div>
+              </div>
+
+              {/* Instant Book Demo Action */}
+              <button
+                onClick={onOpenDemoModal}
+                className="w-full py-2.5 rounded-xl btn-primary text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer shadow-md group hover:scale-[1.02] active:scale-[0.98] transition-all"
+              >
+                <Zap className="w-3.5 h-3.5 fill-white" />
+                <span>Test Live Billing Simulator</span>
+              </button>
+            </div>
+
           </div>
 
         </div>

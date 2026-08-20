@@ -32,7 +32,7 @@ export default function HeroSection({ onOpenTenantModal, onOpenDemoModal, onOpen
   const activeWord = rotatingWords[wordIndex] || rotatingWords[0];
 
   return (
-    <section className="relative w-full pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden text-center select-none z-0">
+    <section className="relative w-full pt-24 sm:pt-32 pb-10 sm:pb-14 overflow-hidden text-center select-none z-0">
       
       {/* ═══════════════════════════════════════════════════
           BESPOKE CLEAN ISOMETRIC PAPER BLUEPRINT HERO BACKGROUND

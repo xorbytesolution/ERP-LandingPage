@@ -500,3 +500,25 @@ body {
   animation: spin-slow 90s linear infinite;
 }
 
+/* ════════════════════════════════════════════════════════
+   MOBILE TOUCH & HAPTIC-GRADE TAP OPTIMIZATIONS
+   Ensures zero 300ms tap delay, eliminates tap grey box,
+   and provides crisp tactile feedback without touching desktop!
+════════════════════════════════════════════════════════ */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* On touchscreens, active tap gives instant spring tactile response */
+  button:active, a:active, [role="button"]:active {
+    transform: scale(0.97);
+    transition: transform 0.08s ease-out;
+  }
+}
+
+

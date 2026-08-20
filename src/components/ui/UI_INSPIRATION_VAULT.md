@@ -48,8 +48,19 @@
 | 38 | **Particle Button** | Kokonut UI (`ParticleButton`) | Click burst micro-particle physics with trailing arrow | [`src/components/ui/particle-button.tsx`](./particle-button.tsx) |
 | 39 | **Neon Glow Input** | Kokonut UI (`GlowInput`) | Luxury AI / search input with animated gradient neon focus aura & shortcut badge | [`src/components/ui/glow-input.tsx`](./glow-input.tsx) |
 | 40 | **Hyper Text** | Magic UI (`HyperText`) | Cyber matrix / hacker scramble cipher decoding text with letter highlight effects | [`src/components/ui/hyper-text.tsx`](./hyper-text.tsx) |
+| 41 | **Radial Arc Showcase (Semi-Circle Dial)** | Bespoke Mathematical Arc (`RadialArcShowcase`) | Semi-circular curved dial with numbered nodes, interactive auto-rotation & focal center stage display | [`src/components/ui/radial-arc-showcase.tsx`](./radial-arc-showcase.tsx) |
 
 ---
+
+## 🛠️ Usage Example: `RadialArcShowcase`
+
+```tsx
+import { RadialArcShowcase } from "@/components/ui";
+
+<RadialArcShowcase
+  onOpenDemoModal={() => console.log("Demo opened")}
+/>
+```
 
 ## 🛠️ Usage Example: `Parallax3DGallery`
 
@@ -64,3 +75,4 @@ import { Parallax3DGallery } from "@/components/ui";
   ]}
 />
 ```
+

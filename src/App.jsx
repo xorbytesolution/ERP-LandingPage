@@ -98,22 +98,10 @@ export default function App() {
             onOpenSimulator={navigateToSimulator}
           />
 
-          {/* Wrapper for all subsequent sections with authentic tactile paper background */}
+          {/* Wrapper for all subsequent sections with clean modern background */}
           <div className="relative">
-            {/* Background Paper Texture Overlay */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-35 mix-blend-multiply bg-repeat z-0"
-              style={{
-                backgroundImage: "url('/crumpled-paper.jpg')",
-                backgroundSize: "700px 700px",
-              }}
-            />
-
             <div className="relative z-10">
-              {/* 3. 3D Scroll Perspective Showcase (ContainerScroll Cockpit) */}
-              <HeroScrollDemo onOpenDemoModal={() => setIsDemoModalOpen(true)} />
-
-              {/* 4. Authentic ERP Super-Modules Bento Grid */}
+              {/* 3. Authentic ERP 9-Point Radial Arc Showcase */}
               <FeatureGrid onOpenDemoModal={() => setIsDemoModalOpen(true)} />
 
               {/* 5. Why Switch: Xorbyte vs Legacy Software (Tally, Vyapar, Busy) */}
